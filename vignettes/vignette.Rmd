@@ -17,3 +17,18 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(EpiBibR)
 ```
+
+## Overview
+
+EpiBibR is a R wrapper to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.
+
+The references were collected via [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/), a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.
+
+More specifically, to retrieve our references, we adopted the procedure use by the Allen Institute for AI for their [CORD-19](https://pages.semanticscholar.org/coronavirus-research) project. We apply the same query on PubMed ("COVID-19" OR Coronavirus OR "Corona virus" OR "2019-nCoV" OR "SARS-CoV" OR "MERS-CoV" OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data. 
+
+To navigate
+
+
+
+
+

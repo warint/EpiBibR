@@ -4,7 +4,7 @@ load("EpiBib_data.RData")
 
 # Function 1: Retrieving Bibliographic Data
 
-#' EpiBib_df
+#' EpiBib_references
 #'
 #' @Description this function allows you to retrieve the complete medical bibliographic dataframe.
 #'
@@ -12,11 +12,11 @@ load("EpiBib_data.RData")
 #' @export
 #'
 #' @examples
-#' df <- EpiBib_df()
+#' df <- EpiBib_references()
 
 
 
-EpiBib_df <- function() {
+EpiBib_references <- function() {
     EpiBib_data
 }
 
