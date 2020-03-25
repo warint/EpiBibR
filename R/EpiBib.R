@@ -181,3 +181,34 @@ EpiBib_abstract <- function(abstract) {
     EpiBib_data[grep(abstract, EpiBib_data$AB, ignore.case = TRUE), ]
   }
 }
+
+# Function 8: Author & Year
+
+#' TitleEpiBib_AU_YE
+#' 
+#'  @description This function allows you to search references by author and year.
+#' 
+#' @param author The name of the author
+#'
+#' @param year A year
+#'
+#' @return dataframe with only the references including the selected author and year.
+#' @export
+#'
+#' @examples
+#' df <- EpiBib_AU_YE(author = "AHMAD", year = 2020)
+#' df <- EpiBib_AU_YE(author = "yang")
+#' ddf <- EpiBib_AU_YE(year = 2005)
+
+
+EpiBib_AU_YE <- function(author = NULL, year = NULL) {
+  if (is.null(author) & is.null(year)) {
+    EpiBib_data
+  } else if (is.null(author)) {
+    EpiBib_data[grep(year, EpiBib_data$PY, ignore.case = TRUE), ]
+  } else if (is.null(year)) {
+    EpiBib_data[grep(author, EpiBib_data$AU, ignore.case = TRUE), ]
+  } else {
+    with(EpiBib_data, EpiBib_data[grepl(author, AU, ignore.case = TRUE) & grepl(year, PY, ignore.case = TRUE), ])
+  } 
+}
