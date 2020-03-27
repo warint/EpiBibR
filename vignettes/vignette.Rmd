@@ -26,7 +26,14 @@ The references were collected via [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/)
 
 More specifically, to retrieve our references, we adopted the procedure use by the Allen Institute for AI for their [CORD-19](https://pages.semanticscholar.org/coronavirus-research) project. We apply the same query on PubMed ("COVID-19" OR Coronavirus OR "Corona virus" OR "2019-nCoV" OR "SARS-CoV" OR "MERS-CoV" OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data. 
 
-To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author's country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. 
+To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author's country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles. 
+
+In an effort to rally our package with the open source community,  the format of our dataframe has been designed to facilitate the use of the R package [Bibliometrix](https://bibliometrix.org/) on our data.
+
+
+
+
+
 
 
 

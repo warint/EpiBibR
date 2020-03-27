@@ -10,7 +10,7 @@ EpiBib_references()
 The complete bibliographic dataframe
 }
 \description{
-EpiBib_references
+this function allows you to retrieve the complete medical bibliographic dataframe.
 }
 \examples{
 df <- EpiBib_references()

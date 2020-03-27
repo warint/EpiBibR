@@ -2,7 +2,7 @@
 % Please edit documentation in R/EpiBib.R
 \name{EpiBib_AU_YE}
 \alias{EpiBib_AU_YE}
-\title{TitleEpiBib_AU_YE}
+\title{EpiBib_AU_YE}
 \usage{
 EpiBib_AU_YE(author = NULL, year = NULL)
 }
@@ -15,10 +15,9 @@ EpiBib_AU_YE(author = NULL, year = NULL)
 dataframe with only the references including the selected author and year.
 }
 \description{
-@description This function allows you to search references by author and year.
+This function allows you to search references by author and year.
 }
 \examples{
-df <- EpiBib_AU_YE(author = "AHMAD", year = 2020)
 df <- EpiBib_AU_YE(author = "yang")
-ddf <- EpiBib_AU_YE(year = 2005)
+dd <- EpiBib_AU_YE(year = 2005)
 }

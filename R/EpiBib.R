@@ -1,12 +1,13 @@
 
-
 load("EpiBib_data.RData")
+
+
 
 # Function 1: Retrieving Bibliographic Data
 
 #' EpiBib_references
 #'
-#' @Description this function allows you to retrieve the complete medical bibliographic dataframe.
+#' @description this function allows you to retrieve the complete medical bibliographic dataframe.
 #'
 #' @return The complete bibliographic dataframe
 #' @export
@@ -184,9 +185,9 @@ EpiBib_abstract <- function(abstract) {
 
 # Function 8: Author & Year
 
-#' TitleEpiBib_AU_YE
+#' EpiBib_AU_YE
 #' 
-#'  @description This function allows you to search references by author and year.
+#' @description This function allows you to search references by author and year.
 #' 
 #' @param author The name of the author
 #'
@@ -196,9 +197,8 @@ EpiBib_abstract <- function(abstract) {
 #' @export
 #'
 #' @examples
-#' df <- EpiBib_AU_YE(author = "AHMAD", year = 2020)
 #' df <- EpiBib_AU_YE(author = "yang")
-#' ddf <- EpiBib_AU_YE(year = 2005)
+#' dd <- EpiBib_AU_YE(year = 2005)
 
 
 EpiBib_AU_YE <- function(author = NULL, year = NULL) {
@@ -212,3 +212,7 @@ EpiBib_AU_YE <- function(author = NULL, year = NULL) {
     with(EpiBib_data, EpiBib_data[grepl(author, AU, ignore.case = TRUE) & grepl(year, PY, ignore.case = TRUE), ])
   } 
 }
+
+
+
+
