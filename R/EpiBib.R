@@ -130,29 +130,29 @@ EpiBib_year <- function(year) {
 
 
 
-# Function 6: Journal
+# Function 6: source
 
-#' EpiBib_journal
+#' EpiBib_source
 #'
-#' @description This function allows you to search references by journal.
-#' Be careful, journals' name are only avalailable in an abbreviated form.
+#' @description This function allows you to search references by source
+#' Be careful, souces' name are only avalailable in an abbreviated form.
 #'
 #'
-#' @param journal The name of the journal
+#' @param source The name of the source
 #'
-#' @return dataframe with only the references including the selected journal.
+#' @return dataframe with only the references including the selected source
 #' @export
 #'
 #' @examples
-#' df <- EpiBib_journal("med")
-#' df <- EpiBib_journal("bio")
+#' df <- EpiBib_source("med")
+#' df <- EpiBib_source("bio")
 
 
-EpiBib_journal <- function(journal) {
-  if (missing(journal)) {
+EpiBib_source <- function(source) {
+  if (missing(source)) {
     EpiBib_data
   } else {
-    EpiBib_data[grep(journal, EpiBib_data$SO, ignore.case = TRUE), ]
+    EpiBib_data[grep(source, EpiBib_data$SO, ignore.case = TRUE), ]
   }
 }
 
@@ -197,8 +197,8 @@ EpiBib_abstract <- function(abstract) {
 #' @export
 #'
 #' @examples
-#' df <- EpiBib_AU_YE(author = "yang")
-#' dd <- EpiBib_AU_YE(year = 2005)
+#' df <- EpiBib_AU_YE(author = "yang", year = 2005)
+
 
 
 EpiBib_AU_YE <- function(author = NULL, year = NULL) {

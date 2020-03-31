@@ -18,6 +18,5 @@ dataframe with only the references including the selected author and year.
 This function allows you to search references by author and year.
 }
 \examples{
-df <- EpiBib_AU_YE(author = "yang")
-dd <- EpiBib_AU_YE(year = 2005)
+df <- EpiBib_AU_YE(author = "yang", year = 2005)
 }
