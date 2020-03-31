@@ -82,7 +82,7 @@ EpiBibR allows you to search bibligraphic references using several arguments : A
 To get the entire bibliographic dataframe contaning more than 25 000 references, use the `EpiBib_reference` function
 
 ```{r,eval=FALSE}
-EpiBib_data <- EpiBib_source()
+EpiBib_data <- EpiBib_references()
 ```
 
 ### Search by author
