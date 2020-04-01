@@ -13,5 +13,5 @@ The complete bibliographic dataframe
 this function allows you to retrieve the complete medical bibliographic dataframe.
 }
 \examples{
-df <- EpiBib_references()
+EpiBib_data <- EpiBib_references()
 }

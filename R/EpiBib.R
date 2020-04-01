@@ -1,5 +1,14 @@
 
-load("EpiBib_data.RData")
+
+# downloading the data
+url <- paste0("https://sites.socialdatasciencelab.org/data/epiBib/covid19_pubmed.csv")
+path <- file.path(tempdir(), "temp.csv")
+curl::curl_download(url, path)
+#reading the data
+csv_file <- file.path(paste0(tempdir(), "/temp.csv"))
+EpiBib_data <- read.csv(csv_file)
+  
+
 
 
 
@@ -11,14 +20,15 @@ load("EpiBib_data.RData")
 #'
 #' @return The complete bibliographic dataframe
 #' @export
-#'
+#' @import curl
+#' 
 #' @examples
-#' df <- EpiBib_references()
+#' EpiBib_data <- EpiBib_references()
 
 
 
 EpiBib_references <- function() {
-    EpiBib_data
+  EpiBib_data
 }
 
 
