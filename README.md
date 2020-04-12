@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-EpiBibR is a R wrapper to easily access bibliographic data on Covid-19
+EpiBibR is an R wrapper to easily access bibliographic data on Covid-19
 and other medical references. In this global crisis, knowledge and open
 data can have an impact. In this regard, our team thought it could be
 significant to make available more than 20 000 references (journal
