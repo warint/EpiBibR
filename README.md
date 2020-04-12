@@ -21,7 +21,7 @@ located at the National Institutes of Health (NIH). PubMed includes over
 30 million citations from biomedical literature.
 
 More specifically, to retrieve our references, we adopted the procedure
-use by the Allen Institute for AI for their
+used by the Allen Institute for AI for their
 [CORD-19](https://pages.semanticscholar.org/coronavirus-research)
 project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR
 “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe
