@@ -77,9 +77,9 @@
 <a href="#epibibr" class="anchor"></a>EpiBibR</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>EpiBibR is a R wrapper to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.</p>
+<p>EpiBibR is an R package to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.</p>
 <p>The references were collected via <a href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
-<p>More specifically, to retrieve our references, we adopted the procedure use by the Allen Institute for AI for their <a href="https://pages.semanticscholar.org/coronavirus-research">CORD-19</a> project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data.</p>
+<p>More specifically, to retrieve our references, we adopted the procedure used by the Allen Institute for AI for their <a href="https://pages.semanticscholar.org/coronavirus-research">CORD-19</a> project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data.</p>
 <p>To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
 <p>In an effort to rally our package with the open source community, the format of our dataframe has been designed to facilitate the use of the R package <a href="https://bibliometrix.org/">Bibliometrix</a> on our data.</p>
 </div>
@@ -253,13 +253,12 @@
 <div id="bibliometric-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bibliometric-analysis" class="anchor"></a>Bibliometric Analysis</h2>
-<p>Bibliometrix package allows an easy bibliometric analysis on R. Our EpiBib data have been designed to make it easier to use.</p>
+<p>Bibliometrix package allows an easy bibliometric analysis on R. Our EpiBib data have been designed to make it easier to use. A shinyapp is also available <code>biblioshiny()</code></p>
 <p>Here are some examples:</p>
 <div class="sourceCode" id="cb11"><pre class="r"><span class="co"># Bibliographic plot summary</span>
 <span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_references.html">EpiBib_references</a></span>()
 <span class="no">M</span> <span class="kw">&lt;-</span> <span class="no">EpiBib_data</span></pre></div>
 <div class="sourceCode" id="cb12"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">results</span>, <span class="kw">k</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">pause</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-15-1.png" width="100%"><img src="reference/figures/README-unnamed-chunk-15-2.png" width="100%"><img src="reference/figures/README-unnamed-chunk-15-3.png" width="100%"></p>
 <div class="sourceCode" id="cb13"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">reshape2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="no">kword</span> <span class="kw">&lt;-</span> <span class="fu">KeywordGrowth</span>(<span class="no">M</span>, <span class="kw">Tag</span> <span class="kw">=</span> <span class="st">"DE"</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>, <span class="kw">top</span> <span class="kw">=</span> <span class="fl">15</span>, <span class="kw">cdf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
@@ -276,6 +275,12 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">text</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">10</span>))+
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="no">variable</span> ~ <span class="no">.</span>)</pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-16-1.png" width="100%"></p>
+</div>
+<div id="copyrights" class="section level2">
+<h2 class="hasAnchor">
+<a href="#copyrights" class="anchor"></a>Copyrights</h2>
+<p>Information that is created by or for the US government on this site is within the public domain. Public domain information on the National Library of Medicine (NLM) Web pages may be freely distributed and copied. However, it is requested that in any subsequent use of this work, NLM be given appropriate acknowledgment.</p>
+<p>NOTE: This site contains resources which incorporate material contributed or licensed by individuals, companies, or organizations that may be protected by U.S. and foreign copyright laws. These include, but are not limited to PubMed Central (PMC) (see PMC Copyright Notice), Bookshelf (see Bookshelf Copyright Notice), OMIM (see OMIM Copyright Status), and PubChem. All persons reproducing, redistributing, or making commercial use of this information are expected to adhere to the terms and conditions asserted by the copyright holder. Transmission or reproduction of protected items beyond that allowed by fair use (PDF) as defined in the copyright laws requires the written permission of the copyright owners." <a href="https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright" class="uri">https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright</a></p>
 </div>
 </div>
 
@@ -305,7 +310,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

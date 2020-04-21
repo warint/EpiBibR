@@ -18,15 +18,36 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-EpiBibR is a R wrapper to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.
+EpiBibR is an R package to easily access bibliographic data on Covid-19
+and other medical references. In this global crisis, knowledge and open
+data can have an impact. In this regard, our team thought it could be
+significant to make available more than 20 000 references (journal
+articles,letter,news) through R.
 
-The references were collected via [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/), a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.
+The references were collected via
+[PubMed](https://www.ncbi.nlm.nih.gov/pubmed/), a free resource that is
+developed and maintained by the National Center for Biotechnology
+Information (NCBI), at the U.S. National Library of Medicine (NLM),
+located at the National Institutes of Health (NIH). PubMed includes over
+30 million citations from biomedical literature.
 
-More specifically, to retrieve our references, we adopted the procedure use by the Allen Institute for AI for their [CORD-19](https://pages.semanticscholar.org/coronavirus-research) project. We apply the same query on PubMed ("COVID-19" OR Coronavirus OR "Corona virus" OR "2019-nCoV" OR "SARS-CoV" OR "MERS-CoV" OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data. 
+More specifically, to retrieve our references, we adopted the procedure
+used by the Allen Institute for AI for their
+[CORD-19](https://pages.semanticscholar.org/coronavirus-research)
+project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR
+“Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe
+Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to
+build our own bibliographic data.
 
-To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author's country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles. 
+To navigate through our bibliographic data, EpiBibR has numerous search
+arguments: author, author’s country of origin, keyword in the title,
+keyword in the abstract, year and the name of the journal. Each of them
+can truly help scientists and R users to filter references and find the
+relevant articles.
 
-In an effort to rally our package with the open source community,  the format of our dataframe has been designed to facilitate the use of the R package [Bibliometrix](https://bibliometrix.org/) on our data.
+In an effort to rally our package with the open source community, the
+format of our dataframe has been designed to facilitate the use of the R
+package [Bibliometrix](https://bibliometrix.org/) on our data.
 
 # Practical usage
 
@@ -141,6 +162,7 @@ Here are some examples:
 
 ```{r,echo=FALSE,message=FALSE}
 library(bibliometrix)
+library(EpiBibR)
 ```
 
 ```{r}
@@ -150,11 +172,11 @@ M <- EpiBib_data
 
 ```
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=FALSE}
 results <- biblioAnalysis(M)
 ```
 
-```{r,warning=FALSE}
+```{r,warning=FALSE,eval=FALSE}
 plot(x = results, k = 10, pause = FALSE)
 ```
 
@@ -176,3 +198,9 @@ ggplot(DF,aes(x=Year,y=value, group=variable, shape=variable, colour=variable))+
   facet_grid(variable ~ .)
 ```
 
+## Copyrights
+
+Information that is created by or for the US government on this site is within the public domain. Public domain information on the National Library of Medicine (NLM) Web pages may be freely distributed and copied. However, it is requested that in any subsequent use of this work, NLM be given appropriate acknowledgment.
+
+NOTE: This site contains resources which incorporate material contributed or licensed by individuals, companies, or organizations that may be protected by U.S. and foreign copyright laws. These include, but are not limited to PubMed Central (PMC) (see PMC Copyright Notice), Bookshelf (see Bookshelf Copyright Notice), OMIM (see OMIM Copyright Status), and PubChem. All persons reproducing, redistributing, or making commercial use of this information are expected to adhere to the terms and conditions asserted by the copyright holder. Transmission or reproduction of protected items beyond that allowed by fair use (PDF) as defined in the copyright laws requires the written permission of the copyright owners."
+https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright

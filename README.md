@@ -167,8 +167,6 @@ M <- EpiBib_data
 plot(x = results, k = 10, pause = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" /><img src="man/figures/README-unnamed-chunk-15-2.png" width="100%" /><img src="man/figures/README-unnamed-chunk-15-3.png" width="100%" />
-
 ``` r
 library(reshape2)
 library(ggplot2)
@@ -188,3 +186,24 @@ ggplot(DF,aes(x=Year,y=value, group=variable, shape=variable, colour=variable))+
 ```
 
 <img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
+
+## Copyrights
+
+Information that is created by or for the US government on this site is
+within the public domain. Public domain information on the National
+Library of Medicine (NLM) Web pages may be freely distributed and
+copied. However, it is requested that in any subsequent use of this
+work, NLM be given appropriate acknowledgment.
+
+NOTE: This site contains resources which incorporate material
+contributed or licensed by individuals, companies, or organizations that
+may be protected by U.S. and foreign copyright laws. These include, but
+are not limited to PubMed Central (PMC) (see PMC Copyright Notice),
+Bookshelf (see Bookshelf Copyright Notice), OMIM (see OMIM Copyright
+Status), and PubChem. All persons reproducing, redistributing, or making
+commercial use of this information are expected to adhere to the terms
+and conditions asserted by the copyright holder. Transmission or
+reproduction of protected items beyond that allowed by fair use (PDF) as
+defined in the copyright laws requires the written permission of the
+copyright owners."
+<https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright>
