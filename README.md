@@ -89,7 +89,7 @@ in the title, keywords in the abstract, year and source name.
 
 ### Retrieve bibliographic data
 
-To get the entire bibliographic dataframe contaning more than 25 000
+To get the entire bibliographic dataframe contaning around 28 000
 references, use the `EpiBib_reference` function
 
 ``` r
