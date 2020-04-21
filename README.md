@@ -42,7 +42,7 @@ package [Bibliometrix](https://bibliometrix.org/) on our data.
 
 ## Quick start
 
-First, install corridoR:
+First, install EpiBibR:
 
 ``` r
 devtools::install_github("warint/EpiBibR")
