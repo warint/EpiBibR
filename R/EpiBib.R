@@ -1,12 +1,19 @@
 
 
+
+load("EpiBib.Rdata")
+
+
+
+
+
 # downloading the data
-url <- paste0("https://sites.socialdatasciencelab.org/data/epiBib/covid19_pubmed.csv")
-path <- file.path(tempdir(), "temp.csv")
-curl::curl_download(url, path)
+# url <- paste0("https://sites.socialdatasciencelab.org/data/epiBib/covid19_pubmed.csv")
+#path <- file.path(tempdir(), "temp.csv")
+#curl::curl_download(url, path)
 #reading the data
-csv_file <- file.path(paste0(tempdir(), "/temp.csv"))
-EpiBib_data <- read.csv(csv_file)
+#csv_file <- file.path(paste0(tempdir(), "/temp.csv"))
+#EpiBib_data <- read.csv(csv_file)
   
 
 

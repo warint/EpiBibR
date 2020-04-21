@@ -10,7 +10,7 @@
 EpiBibR is an R package to easily access bibliographic data on Covid-19
 and other medical references. In this global crisis, knowledge and open
 data can have an impact. In this regard, our team thought it could be
-significant to make available more than 20 000 references (journal
+significant to make available more than 28 000 references (journal
 articles,letter,news) through R.
 
 The references were collected via

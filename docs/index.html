@@ -77,7 +77,7 @@
 <a href="#epibibr" class="anchor"></a>EpiBibR</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>EpiBibR is an R package to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.</p>
+<p>EpiBibR is an R package to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 28 000 references (journal articles,letter,news) through R.</p>
 <p>The references were collected via <a href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
 <p>More specifically, to retrieve our references, we adopted the procedure used by the Allen Institute for AI for their <a href="https://pages.semanticscholar.org/coronavirus-research">CORD-19</a> project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data.</p>
 <p>To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
@@ -89,7 +89,7 @@
 <div id="quick-start" class="section level2">
 <h2 class="hasAnchor">
 <a href="#quick-start" class="anchor"></a>Quick start</h2>
-<p>First, install corridoR:</p>
+<p>First, install EpiBibR:</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/EpiBibR"</span>)</pre></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
@@ -201,7 +201,7 @@
 <div id="retrieve-bibliographic-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
-<p>To get the entire bibliographic dataframe contaning more than 25 000 references, use the <code>EpiBib_reference</code> function</p>
+<p>To get the entire bibliographic dataframe contaning around 28 000 references, use the <code>EpiBib_reference</code> function</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_references.html">EpiBib_references</a></span>()</pre></div>
 </div>
 <div id="search-by-author" class="section level3">
