@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/warint/EpiBibR.svg?branch=master)](https://travis-ci.com/warint/EpiBibR)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/warint/EpiBibR?branch=master&svg=true)](https://ci.appveyor.com/project/warint/EpiBibR)
 <!-- badges: end -->
 
 EpiBibR is an R package to easily access bibliographic data on Covid-19
