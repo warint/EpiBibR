@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.com/warint/EpiBibR.svg?branch=master)](https://travis-ci.com/warint/EpiBibR)
+status](https://travis-ci.org/warint/EpiBibR.svg?branch=master)](https://travis-ci.com/warint/EpiBibR)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/warint/EpiBibR?branch=master&svg=true)](https://ci.appveyor.com/project/warint/EpiBibR)
 <!-- badges: end -->
@@ -163,8 +163,7 @@ Here are some examples:
 
 ``` r
 # Bibliographic plot summary
-EpiBib_data <- EpiBib_references()
-M <- EpiBib_data
+MM<-EpiBib_references()
 ```
 
 ``` r
@@ -172,24 +171,18 @@ plot(x = results, k = 10, pause = FALSE)
 ```
 
 ``` r
-library(reshape2)
-library(ggplot2)
-kword <- KeywordGrowth(M, Tag = "DE", sep = ";", top = 15, cdf = TRUE)
-DF = melt(kword, id='Year')
-#timeline keywords ggplot
-ggplot(DF,aes(x=Year,y=value, group=variable, shape=variable, colour=variable))+
-  geom_point()+geom_line()+ 
-  scale_shape_manual(values = 1:15)+
-  labs(color="Author Keywords")+
-  scale_x_continuous(breaks = seq(min(DF$Year), max(DF$Year), by = 5))+
-  scale_y_continuous(breaks = seq(0, max(DF$value), by=10))+
-  guides(color=guide_legend(title = "Author Keywords"), shape=FALSE)+
-  labs(y="Count", variable="Author Keywords", title = "Author's Keywords Usage Evolution Over Time")+
-  theme(text = element_text(size = 10))+
-  facet_grid(variable ~ .)
+ggplot(p1, aes(Year, value, fill = variable, colour=variable)) +
+  geom_point(aes(fill = variable, colour=variable), size =1,show.legend = FALSE) +
+  geom_line(aes(fill = variable, colour=variable), size= 1)+
+  theme(legend.position = "none")+
+  ggtitle("Author's Keywords Usage Evolution Over Time")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_color_uchicago()+
+  scale_fill_uchicago()+
+  theme_hc()
 ```
 
-<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" width="100%" />
 
 ## Copyrights
 
