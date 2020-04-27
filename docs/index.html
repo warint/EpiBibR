@@ -77,11 +77,104 @@
 <a href="#epibibr" class="anchor"></a>EpiBibR</h1></div>
 <!-- badges: start -->
 
-<p>EpiBibR is an R package to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 28 000 references (journal articles,letter,news) through R.</p>
-<p>The references were collected via <a href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
-<p>More specifically, to retrieve our references, we adopted the procedure used by the Allen Institute for AI for their <a href="https://pages.semanticscholar.org/coronavirus-research">CORD-19</a> project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data.</p>
-<p>To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
-<p>In an effort to rally our package with the open source community, the format of our dataframe has been designed to facilitate the use of the R package <a href="https://bibliometrix.org/">Bibliometrix</a> on our data.</p>
+</div>
+<div id="overview" class="section level1">
+<h1 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h1>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 28,000 references (on April 21, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
+<p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
+</div>
+<div id="functionality" class="section level1">
+<h1 class="hasAnchor">
+<a href="#functionality" class="anchor"></a>Functionality</h1>
+<p>The references were collected via PubMed, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
+<p>More specifically, to collect our references, we adopted the procedure used by the Allen Institute for AI for their CORD-19 project. We apply a similar query on PubMed: “COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” to build our own bibliographic data.</p>
+<p>To navigate through our dataset, EpiBibR relies on a set of search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
+<p>In an effort to simplify the workflow between our package and the research methodologies, the format of our dataframe has been designed to integrate with different data pipelines, notably to facilitate the use of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).</p>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
+<center>
+<p>Table 1. Features accessible through the package.</p>
+</center>
+<table class="table">
+<thead><tr class="header">
+<th>Field Tags</th>
+<th>Descriptions</th>
+<th>Field Tags</th>
+<th>Descriptions</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>AU</td>
+<td>Authors</td>
+<td>ISSN</td>
+<td>Source Code</td>
+</tr>
+<tr class="even">
+<td>TI</td>
+<td>Document Title</td>
+<td>VOL</td>
+<td>Volume</td>
+</tr>
+<tr class="odd">
+<td>AB</td>
+<td>Abstract</td>
+<td>ISSUE</td>
+<td>Issue Number</td>
+</tr>
+<tr class="even">
+<td>PY</td>
+<td>Year</td>
+<td>LT</td>
+<td>Language</td>
+</tr>
+<tr class="odd">
+<td>DT</td>
+<td>Document Type</td>
+<td>C1</td>
+<td>Author Address</td>
+</tr>
+<tr class="even">
+<td>MESH</td>
+<td>Medical Subject Headings Vocabulary</td>
+<td>RP</td>
+<td>Reprint Address</td>
+</tr>
+<tr class="odd">
+<td>TC</td>
+<td>Times Cited</td>
+<td>ID</td>
+<td>PubMed ID</td>
+</tr>
+<tr class="even">
+<td>SO</td>
+<td>Publication Name (or Source)</td>
+<td>DE</td>
+<td>Authors’ Keywords</td>
+</tr>
+<tr class="odd">
+<td>J9</td>
+<td>Source Abbreviation</td>
+<td>UT</td>
+<td>Unique Article Identifier</td>
+</tr>
+<tr class="even">
+<td>JI</td>
+<td>ISO Source Abbreviation</td>
+<td>AU_CO</td>
+<td>Author’s Country of Origin</td>
+</tr>
+<tr class="odd">
+<td>DI</td>
+<td>Digital Object Identifier (DOI)</td>
+<td>DB</td>
+<td>Bibliographic Database</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="practical-usage" class="section level1">
 <h1 class="hasAnchor">
@@ -94,106 +187,6 @@
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
 </div>
-<div id="data-summary" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-summary" class="anchor"></a>Data Summary</h2>
-<table class="table">
-<thead><tr class="header">
-<th>Field Tag</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>AU</td>
-<td>Authors</td>
-</tr>
-<tr class="even">
-<td>TI</td>
-<td>Document Title</td>
-</tr>
-<tr class="odd">
-<td>AB</td>
-<td>Abstract</td>
-</tr>
-<tr class="even">
-<td>PY</td>
-<td>Year</td>
-</tr>
-<tr class="odd">
-<td>DT</td>
-<td>Document Type</td>
-</tr>
-<tr class="even">
-<td>MESH</td>
-<td>Medical Subject Headings Vocabulary</td>
-</tr>
-<tr class="odd">
-<td>TC</td>
-<td>Times Cited</td>
-</tr>
-<tr class="even">
-<td>SO</td>
-<td>Publication Name (or Source)</td>
-</tr>
-<tr class="odd">
-<td>J9</td>
-<td>Source Abbreviation</td>
-</tr>
-<tr class="even">
-<td>JI</td>
-<td>ISO Source Abbreviation</td>
-</tr>
-<tr class="odd">
-<td>DI</td>
-<td>Digital Object Identifier (DOI)</td>
-</tr>
-<tr class="even">
-<td>ISSN</td>
-<td>Source Code</td>
-</tr>
-<tr class="odd">
-<td>VOL</td>
-<td>Volume</td>
-</tr>
-<tr class="even">
-<td>ISSUE</td>
-<td>Issue Number</td>
-</tr>
-<tr class="odd">
-<td>LT</td>
-<td>Language</td>
-</tr>
-<tr class="even">
-<td>C1</td>
-<td>Author Address</td>
-</tr>
-<tr class="odd">
-<td>RP</td>
-<td>Reprint Address</td>
-</tr>
-<tr class="even">
-<td>ID</td>
-<td>PubMed ID</td>
-</tr>
-<tr class="odd">
-<td>DE</td>
-<td>Authors’ Keywords</td>
-</tr>
-<tr class="even">
-<td>UT</td>
-<td>Unique Article Identifier</td>
-</tr>
-<tr class="odd">
-<td>AU_CO</td>
-<td>Author’s Country of Origin</td>
-</tr>
-<tr class="even">
-<td>DB</td>
-<td>Bibliographic Database</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div id="how-to" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to" class="anchor"></a>How-To</h2>
@@ -201,7 +194,7 @@
 <div id="retrieve-bibliographic-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
-<p>To get the entire bibliographic dataframe contaning around 28 000 references, use the <code>EpiBib_reference</code> function</p>
+<p>To get the entire bibliographic dataframe contaning around 28 000 references, use the <code>EpiBib_reference</code> function.</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_references.html">EpiBib_references</a></span>()</pre></div>
 </div>
 <div id="search-by-author" class="section level3">
@@ -253,34 +246,21 @@
 <div id="bibliometric-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bibliometric-analysis" class="anchor"></a>Bibliometric Analysis</h2>
-<p>Bibliometrix package allows an easy bibliometric analysis on R. Our EpiBib data have been designed to make it easier to use. A shinyapp is also available <code>biblioshiny()</code></p>
-<p>Here are some examples:</p>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="co"># Bibliographic plot summary</span>
-<span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_references.html">EpiBib_references</a></span>()
-<span class="no">M</span> <span class="kw">&lt;-</span> <span class="no">EpiBib_data</span></pre></div>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">results</span>, <span class="kw">k</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">pause</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></div>
-<div class="sourceCode" id="cb13"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">reshape2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="no">kword</span> <span class="kw">&lt;-</span> <span class="fu">KeywordGrowth</span>(<span class="no">M</span>, <span class="kw">Tag</span> <span class="kw">=</span> <span class="st">"DE"</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>, <span class="kw">top</span> <span class="kw">=</span> <span class="fl">15</span>, <span class="kw">cdf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="no">DF</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/pkg/reshape2/man/melt.html">melt</a></span>(<span class="no">kword</span>, <span class="kw">id</span><span class="kw">=</span><span class="st">'Year'</span>)
-<span class="co">#timeline keywords ggplot</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">DF</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span><span class="kw">=</span><span class="no">Year</span>,<span class="kw">y</span><span class="kw">=</span><span class="no">value</span>, <span class="kw">group</span><span class="kw">=</span><span class="no">variable</span>, <span class="kw">shape</span><span class="kw">=</span><span class="no">variable</span>, <span class="kw">colour</span><span class="kw">=</span><span class="no">variable</span>))+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>()+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>()+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_shape_manual</a></span>(<span class="kw">values</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">15</span>)+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">color</span><span class="kw">=</span><span class="st">"Author Keywords"</span>)+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(<span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">DF</span>$<span class="no">Year</span>), <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">DF</span>$<span class="no">Year</span>), <span class="kw">by</span> <span class="kw">=</span> <span class="fl">5</span>))+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">DF</span>$<span class="no">value</span>), <span class="kw">by</span><span class="kw">=</span><span class="fl">10</span>))+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span>(<span class="kw">color</span><span class="kw">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guide_legend.html">guide_legend</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Author Keywords"</span>), <span class="kw">shape</span><span class="kw">=</span><span class="fl">FALSE</span>)+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">y</span><span class="kw">=</span><span class="st">"Count"</span>, <span class="kw">variable</span><span class="kw">=</span><span class="st">"Author Keywords"</span>, <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Author's Keywords Usage Evolution Over Time"</span>)+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">text</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">size</span> <span class="kw">=</span> <span class="fl">10</span>))+
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="no">variable</span> ~ <span class="no">.</span>)</pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-16-1.png" width="100%"></p>
+<p>The <em>bibliometrix</em> package allows a thorough bibliometric analysis using R. Our EpiBib data have been designed to integrate easily with the <em>bibliometrix</em> package. A shinyapp is also available <code>biblioshiny()</code>. This package has been used extensively for various exercises mobilizing massive amounts of data.</p>
+<p>Let us first propose a simple count of the references on the coronaviruses literature (see Figure 1). In Figure 1, the historical development of research on coronaviruses can be analyzed as having three stages: exploration, initial development and rapid development in the past year and the current year.</p>
+<div class="figure">
+<p><img src="./man/figures/figure1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%"></p>
+<p class="caption">
+1) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries
+</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="op">&lt;</span><span class="er">/</span>div<span class="op">&gt;</span></a></code></pre></div>
 </div>
 <div id="copyrights" class="section level2">
 <h2 class="hasAnchor">
 <a href="#copyrights" class="anchor"></a>Copyrights</h2>
 <p>Information that is created by or for the US government on this site is within the public domain. Public domain information on the National Library of Medicine (NLM) Web pages may be freely distributed and copied. However, it is requested that in any subsequent use of this work, NLM be given appropriate acknowledgment.</p>
 <p>NOTE: This site contains resources which incorporate material contributed or licensed by individuals, companies, or organizations that may be protected by U.S. and foreign copyright laws. These include, but are not limited to PubMed Central (PMC) (see PMC Copyright Notice), Bookshelf (see Bookshelf Copyright Notice), OMIM (see OMIM Copyright Status), and PubChem. All persons reproducing, redistributing, or making commercial use of this information are expected to adhere to the terms and conditions asserted by the copyright holder. Transmission or reproduction of protected items beyond that allowed by fair use (PDF) as defined in the copyright laws requires the written permission of the copyright owners." <a href="https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright" class="uri">https://www.ncbi.nlm.nih.gov/home/about/policies/#copyright</a></p>
+</div>
 </div>
 </div>
 
@@ -304,7 +284,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.com/warint/EpiBibR"><img src="https://travis-ci.com/warint/EpiBibR.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://travis-ci.com/warint/EpiBibR"><img src="https://travis-ci.org/warint/EpiBibR.svg?branch=master" alt="Travis build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/warint/EpiBibR"><img src="https://ci.appveyor.com/api/projects/status/github/warint/EpiBibR?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 </ul>
 </div>
