@@ -20,36 +20,48 @@ knitr::opts_chunk$set(
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/warint/EpiBibR?branch=master&svg=true)](https://ci.appveyor.com/project/warint/EpiBibR)
 <!-- badges: end -->
 
-EpiBibR is an R package to easily access bibliographic data on Covid-19
-and other medical references. In this global crisis, knowledge and open
-data can have an impact. In this regard, our team thought it could be
-significant to make available more than 28 000 references (journal
-articles,letter,news) through R.
+# Overview
 
-The references were collected via
-[PubMed](https://www.ncbi.nlm.nih.gov/pubmed/), a free resource that is
-developed and maintained by the National Center for Biotechnology
-Information (NCBI), at the U.S. National Library of Medicine (NLM),
-located at the National Institutes of Health (NIH). PubMed includes over
-30 million citations from biomedical literature.
+EpiBibR stands for "epidemiology-based bibliography for R." The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 28,000 references (on April 21, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher's pipeline.
 
-More specifically, to retrieve our references, we adopted the procedure
-used by the Allen Institute for AI for their
-[CORD-19](https://pages.semanticscholar.org/coronavirus-research)
-project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR
-“Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe
-Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to
-build our own bibliographic data.
+Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).
 
-To navigate through our bibliographic data, EpiBibR has numerous search
-arguments: author, author’s country of origin, keyword in the title,
-keyword in the abstract, year and the name of the journal. Each of them
-can truly help scientists and R users to filter references and find the
-relevant articles.
+The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.
 
-In an effort to rally our package with the open source community, the
-format of our dataframe has been designed to facilitate the use of the R
-package [Bibliometrix](https://bibliometrix.org/) on our data.
+# Functionality
+
+The references were collected via PubMed, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.
+
+More specifically, to collect our references, we adopted the procedure used by the Allen Institute for AI for their CORD-19 project. We apply a similar query on PubMed: “COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” to build our own bibliographic data.
+
+To navigate through our dataset, EpiBibR relies on a set of search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.
+
+In an effort to simplify the workflow between our package and the research methodologies, the format of our dataframe has been designed to integrate with different data pipelines, notably to facilitate the use of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
+
+
+## Features
+
+<center>
+Table 1. Features accessible through the package.
+</center>
+
+| Field Tags | Descriptions                        | Field Tags |  Descriptions              |
+|------------|-------------------------------------|------------|----------------------------|
+| AU         | Authors                             | ISSN       | Source Code                |
+| TI         | Document Title                      | VOL        | Volume                     |
+| AB         | Abstract                            | ISSUE      | Issue Number               |
+| PY         | Year                                | LT         | Language                   |
+| DT         | Document Type                       | C1         | Author Address             |
+| MESH       | Medical Subject Headings Vocabulary | RP         | Reprint Address            |
+| TC         | Times Cited                         | ID         | PubMed ID                  |
+| SO         | Publication Name (or Source)        | DE         | Authors’ Keywords          |
+| J9         | Source Abbreviation                 | UT         | Unique Article Identifier  |
+| JI         | ISO Source Abbreviation             | AU\_CO     | Author’s Country of Origin |
+| DI         | Digital Object Identifier (DOI)     | DB         | Bibliographic Database     |
+
+
+
+
 
 # Practical usage
 
@@ -67,32 +79,6 @@ Next, call EpiBibR to make sure everything is installed correctly.
 library(EpiBibR)
 ```
 
-## Data Summary
-
-| Field Tag | Description                         |
-|-----------|-------------------------------------|
-| AU        | Authors                             |
-| TI        | Document Title                      |
-| AB        | Abstract                            |
-| PY        | Year                                |
-| DT        | Document Type                       |
-| MESH      | Medical Subject Headings Vocabulary |
-| TC        | Times Cited                         |
-| SO        | Publication Name (or Source)        |
-| J9        | Source Abbreviation                 |
-| JI        | ISO Source Abbreviation             |
-| DI        | Digital Object Identifier (DOI)     |
-| ISSN      | Source Code                         |
-| VOL       | Volume                              |
-| ISSUE     | Issue Number                        |
-| LT        | Language                            |
-| C1        | Author Address                      |
-| RP        | Reprint Address                     |
-| ID        | PubMed ID                           |
-| DE        | Authors' Keywords                   |
-| UT        | Unique Article Identifier           |
-| AU_CO     | Author's Country of Origin          |
-| DB        | Bibliographic Database              |
 
 ## How-To 
 
@@ -100,7 +86,7 @@ EpiBibR allows you to search bibligraphic references using several arguments : A
 
 ### Retrieve bibliographic data
 
-To get the entire bibliographic dataframe contaning around 28 000 references, use the `EpiBib_reference` function
+To get the entire bibliographic dataframe contaning around 28 000 references, use the `EpiBib_reference` function.
 
 ```{r,eval=FALSE}
 EpiBib_data <- EpiBib_references()
@@ -158,75 +144,106 @@ Many are available on [Stat](https://www.statnews.com/tag/coronavirus/) or you c
 
 ## Bibliometric Analysis
 
-Bibliometrix package allows an easy bibliometric analysis on R. Our EpiBib data have been designed to make it easier to use.  A shinyapp is also available `biblioshiny()`
+The *bibliometrix* package allows a thorough bibliometric analysis using R. Our EpiBib data have been designed to integrate easily with the *bibliometrix* package. A shinyapp is also available `biblioshiny()`. This package has been used extensively for various exercises mobilizing massive amounts of data.
 
-Here are some examples: 
+Let us first propose a simple count of the references on the coronaviruses literature (see Figure 1).  In Figure 1, the historical development of research on coronaviruses can be analyzed as having three stages: exploration, initial development and rapid development in the past year and the current year.
+
+```{r, echo = FALSE, eval = TRUE, include=FALSE}
+# Downloading the data
+library(EpiBibR)
+library(bibliometrix)
+
+MM<-EpiBib_references()
+
+# Only fo 2020
+M<-EpiBib_year(2020)
+
+# Summary results + plots
+results <- biblioAnalysis(MM, sep = ";")
+S <- summary(object = results, k = 10, pause = FALSE)
+```
 
 ```{r,echo=FALSE,message=FALSE}
-library(EpiBibR)
+# Most Productive Authors
+
 library(bibliometrix)
 library(reshape2)
 library(ggplot2)
 library(ggsci)
+library(tidyverse)
+library(plyr)
 library(ggthemes)
-```
+library(cowplot)
 
+df <- plyr::ldply(S, data.frame)
+df <- subset(df, .id == "MostProdAuthors", select = c(Articles, Authors.......))
+df <- df %>% dplyr::rename(Authors = Authors.......)
 
-```{r}
-# Bibliographic plot summary
-MM<-EpiBib_references()
+df$Articles <- as.numeric(df$Articles)
+df$Authors <-as.factor(df$Authors)
 
-```
-
-```{r,echo=FALSE,warning=FALSE,message=FALSE,eval=FALSE}
-results <- biblioAnalysis(MM)
-```
-
-```{r,warning=FALSE,eval=FALSE,echo=TRUE,message=FALSE}
-plot(x = results, k = 10, pause = FALSE)
-```
-
-
-```{r,echo=FALSE}
-
-
-kword <- KeywordGrowth(MM, Tag = "DE", sep = ";", top = 15, cdf = TRUE)
-DF = melt(kword, id='Year')
-
-
-DF <- DF[DF[, "Year"] >= 1990,]
-Immunology <-DF[DF$variable == "IMMUNOLOGY", ]
-Genetics <-DF[DF$variable == "GENETICS", ]
-Humans <-DF[DF$variable == "HUMANS", ]
-Virology <-DF[DF$variable == "VIROLOGY", ]
-Metabolism <-DF[DF$variable == "METABOLISM", ]
-Epidemiology <-DF[DF$variable == "EPIDEMIOLOGY", ]
-Animals <-DF[DF$variable == "ANIMALS", ]
-Female <-DF[DF$variable == "FEMALE", ]
-Male <-DF[DF$variable == "MALE", ]
-Isolation <-DF[DF$variable == "ISOLATION &AMP", ]
-Purification <-DF[DF$variable == "PURIFICATION", ]
-Veterinary <-DF[DF$variable == "VETERINARY", ]
-Pathology <-DF[DF$variable == "PATHOLOGY", ]
-Diagnosis <-DF[DF$variable == "DIAGNOSIS", ]
-Control <-DF[DF$variable == "CONTROL", ]
-p1 <- rbind(Immunology,Genetics,Humans,Virology,Metabolism)
-
-
-
-```
-
-
-```{r,echo=TRUE,message=FALSE,warning=FALSE}
-ggplot(p1, aes(Year, value, fill = variable, colour=variable)) +
-  geom_point(aes(fill = variable, colour=variable), size =1,show.legend = FALSE) +
-  geom_line(aes(fill = variable, colour=variable), size= 1)+
-  theme(legend.position = "none")+
-  ggtitle("Author's Keywords Usage Evolution Over Time")+
-  theme(plot.title = element_text(hjust = 0.5))+
-  scale_color_uchicago()+
-  scale_fill_uchicago()+
+p1 <- ggplot(df, aes(x = reorder(Authors, Articles), y = Articles, fill = Articles)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  labs(x = "Authors") +
   theme_hc()
+
+rm(df)
+
+# Most Productive Countries
+
+df <- plyr::ldply(S, data.frame)
+df <- subset(df, .id == "MostProdCountries", select = c(Articles, Country))
+
+df$Articles <- as.numeric(df$Articles)
+df$Country <-as.factor(df$Country)
+
+p2 <- ggplot(df, aes(x = reorder(Country, Articles), y = Articles, fill = Articles)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  labs(x = "Countries") +
+  theme_hc()
+
+rm(df)
+
+# Count of articles per year
+
+df <- plyr::ldply(S, data.frame)
+df <- subset(df, .id == "AnnualProduction", select = c(Year..., Articles))
+df <- df %>% dplyr::rename(Year = Year...)
+
+df$Year <- as.numeric(as.character(df$Year))
+df$Articles <- as.numeric(df$Articles)
+
+
+p3 <- ggplot(df, aes(x = Year, y = Articles, colour = cond)) +
+  geom_line(colour = "#0072B2") +
+  geom_point(colour = "#0072B2") +
+  labs( x = "") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_x_continuous(breaks = seq(1950,2020, 5)) +
+  theme_hc()
+
+rm(df)
+```
+
+```{r,echo=FALSE,message=FALSE,eval=FALSE}
+ggsave(
+  "./man/figures/figure1.png",
+
+ggdraw() +
+  draw_plot(p3, 0, .5, 1, .5) +
+  draw_plot(p1, 0, 0, .5, .5) +
+  draw_plot(p2, .5, 0, .5, .5) +
+  draw_plot_label(c("A", "B", "C"), c(0, 0, 0.5), c(1, 0.5, 0.5), size = 15)
+,
+  dpi = 1200
+)
+```
+
+
+```{r,echo=FALSE, eval = TRUE, fig.cap = "(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%'}
+knitr::include_graphics("./man/figures/figure1.png")
 ```
 
 ## Copyrights
