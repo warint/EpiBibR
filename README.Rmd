@@ -227,24 +227,18 @@ p3 <- ggplot(df, aes(x = Year, y = Articles, colour = cond)) +
 rm(df)
 ```
 
-```{r,echo=FALSE,message=FALSE,eval=FALSE}
-ggsave(
-  "./man/figures/figure1.png",
+```{r,echo=FALSE,message=FALSE,eval=TRUE,fig.cap = "(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%'}
 
 ggdraw() +
   draw_plot(p3, 0, .5, 1, .5) +
   draw_plot(p1, 0, 0, .5, .5) +
   draw_plot(p2, .5, 0, .5, .5) +
   draw_plot_label(c("A", "B", "C"), c(0, 0, 0.5), c(1, 0.5, 0.5), size = 15)
-,
+
   dpi = 1200
-)
+
 ```
 
-
-```{r,echo=FALSE, eval = TRUE, fig.cap = "(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%'}
-knitr::include_graphics("./man/figures/figure1.png")
-```
 
 ## Copyrights
 

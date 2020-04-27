@@ -200,7 +200,7 @@ year.
 
 <div class="figure">
 
-<img src="./man/figures/figure1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%" />
 
 <p class="caption">
 
