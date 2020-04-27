@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> • EpiBibR</title>
+<title>vignette • EpiBibR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="">
+<script src="../pkgdown.js"></script><meta property="og:title" content="vignette">
 <meta property="og:description" content="EpiBibR">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -54,7 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/vignette.html">UNKNOWN TITLE</a>
+      <a href="../articles/vignette.html">vignette</a>
     </li>
   </ul>
 </li>
@@ -72,7 +72,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip></h1>
+      <h1 data-toc-skip>vignette</h1>
             
       
       
@@ -82,16 +82,104 @@
 
     
     
-<p>u— title: “vignette” output: rmarkdown::html_vignette vignette: &gt; % % % —</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></body></html></div>
-<div id="overview" class="section level2">
+<div id="overview" class="section level1">
+<h1 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h1>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 28,000 references (on April 21, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
+<p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
+</div>
+<div id="functionality" class="section level1">
+<h1 class="hasAnchor">
+<a href="#functionality" class="anchor"></a>Functionality</h1>
+<p>The references were collected via PubMed, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
+<p>More specifically, to collect our references, we adopted the procedure used by the Allen Institute for AI for their CORD-19 project. We apply a similar query on PubMed: “COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” to build our own bibliographic data.</p>
+<p>To navigate through our dataset, EpiBibR relies on a set of search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
+<p>In an effort to simplify the workflow between our package and the research methodologies, the format of our dataframe has been designed to integrate with different data pipelines, notably to facilitate the use of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).</p>
+<div id="features" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
-<p>EpiBibR is a R wrapper to easily access bibliographic data on Covid-19 and other medical references. In this global crisis, knowledge and open data can have an impact. In this regard, our team thought it could be significant to make available more than 20 000 references (journal articles,letter,news) through R.</p>
-<p>The references were collected via <a href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
-<p>More specifically, to retrieve our references, we adopted the procedure use by the Allen Institute for AI for their <a href="https://pages.semanticscholar.org/coronavirus-research">CORD-19</a> project. We apply the same query on PubMed (“COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” ) to build our own bibliographic data.</p>
-<p>To navigate through our bibliographic data, EpiBibR has numerous search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
-<p>In an effort to rally our package with the open source community, the format of our dataframe has been designed to facilitate the use of the R package <a href="https://bibliometrix.org/">Bibliometrix</a> on our data.</p>
+<a href="#features" class="anchor"></a>Features</h2>
+<center>
+Table 1. Features accessible through the package.
+</center>
+<table class="table">
+<thead><tr class="header">
+<th>Field Tags</th>
+<th>Descriptions</th>
+<th>Field Tags</th>
+<th>Descriptions</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>AU</td>
+<td>Authors</td>
+<td>ISSN</td>
+<td>Source Code</td>
+</tr>
+<tr class="even">
+<td>TI</td>
+<td>Document Title</td>
+<td>VOL</td>
+<td>Volume</td>
+</tr>
+<tr class="odd">
+<td>AB</td>
+<td>Abstract</td>
+<td>ISSUE</td>
+<td>Issue Number</td>
+</tr>
+<tr class="even">
+<td>PY</td>
+<td>Year</td>
+<td>LT</td>
+<td>Language</td>
+</tr>
+<tr class="odd">
+<td>DT</td>
+<td>Document Type</td>
+<td>C1</td>
+<td>Author Address</td>
+</tr>
+<tr class="even">
+<td>MESH</td>
+<td>Medical Subject Headings Vocabulary</td>
+<td>RP</td>
+<td>Reprint Address</td>
+</tr>
+<tr class="odd">
+<td>TC</td>
+<td>Times Cited</td>
+<td>ID</td>
+<td>PubMed ID</td>
+</tr>
+<tr class="even">
+<td>SO</td>
+<td>Publication Name (or Source)</td>
+<td>DE</td>
+<td>Authors’ Keywords</td>
+</tr>
+<tr class="odd">
+<td>J9</td>
+<td>Source Abbreviation</td>
+<td>UT</td>
+<td>Unique Article Identifier</td>
+</tr>
+<tr class="even">
+<td>JI</td>
+<td>ISO Source Abbreviation</td>
+<td>AU_CO</td>
+<td>Author’s Country of Origin</td>
+</tr>
+<tr class="odd">
+<td>DI</td>
+<td>Digital Object Identifier (DOI)</td>
+<td>DB</td>
+<td>Bibliographic Database</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="practical-usage" class="section level1">
 <h1 class="hasAnchor">
@@ -99,110 +187,10 @@
 <div id="quick-start" class="section level2">
 <h2 class="hasAnchor">
 <a href="#quick-start" class="anchor"></a>Quick start</h2>
-<p>First, install corridoR:</p>
+<p>First, install EpiBibR:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/EpiBibR"</span>)</pre></body></html></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></body></html></div>
-</div>
-<div id="data-summary" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-summary" class="anchor"></a>Data Summary</h2>
-<table class="table">
-<thead><tr class="header">
-<th>Field Tag</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>AU</td>
-<td>Authors</td>
-</tr>
-<tr class="even">
-<td>TI</td>
-<td>Document Title</td>
-</tr>
-<tr class="odd">
-<td>AB</td>
-<td>Abstract</td>
-</tr>
-<tr class="even">
-<td>PY</td>
-<td>Year</td>
-</tr>
-<tr class="odd">
-<td>DT</td>
-<td>Document Type</td>
-</tr>
-<tr class="even">
-<td>MESH</td>
-<td>Medical Subject Headings Vocabulary</td>
-</tr>
-<tr class="odd">
-<td>TC</td>
-<td>Times Cited</td>
-</tr>
-<tr class="even">
-<td>SO</td>
-<td>Publication Name (or Source)</td>
-</tr>
-<tr class="odd">
-<td>J9</td>
-<td>Source Abbreviation</td>
-</tr>
-<tr class="even">
-<td>JI</td>
-<td>ISO Source Abbreviation</td>
-</tr>
-<tr class="odd">
-<td>DI</td>
-<td>Digital Object Identifier (DOI)</td>
-</tr>
-<tr class="even">
-<td>ISSN</td>
-<td>Source Code</td>
-</tr>
-<tr class="odd">
-<td>VOL</td>
-<td>Volume</td>
-</tr>
-<tr class="even">
-<td>ISSUE</td>
-<td>Issue Number</td>
-</tr>
-<tr class="odd">
-<td>LT</td>
-<td>Language</td>
-</tr>
-<tr class="even">
-<td>C1</td>
-<td>Author Address</td>
-</tr>
-<tr class="odd">
-<td>RP</td>
-<td>Reprint Address</td>
-</tr>
-<tr class="even">
-<td>ID</td>
-<td>PubMed ID</td>
-</tr>
-<tr class="odd">
-<td>DE</td>
-<td>Authors’ Keywords</td>
-</tr>
-<tr class="even">
-<td>UT</td>
-<td>Unique Article Identifier</td>
-</tr>
-<tr class="odd">
-<td>AU_CO</td>
-<td>Author’s Country of Origin</td>
-</tr>
-<tr class="even">
-<td>DB</td>
-<td>Bibliographic Database</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="how-to" class="section level2">
 <h2 class="hasAnchor">
@@ -211,7 +199,7 @@
 <div id="retrieve-bibliographic-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
-<p>To get the entire bibliographic dataframe contaning more than 25 000 references, use the <code>EpiBib_reference</code> function</p>
+<p>To get the entire bibliographic dataframe contaning around 28 000 references, use the <code>EpiBib_reference</code> function.</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_references.html">EpiBib_references</a></span>()</pre></body></html></div>
 </div>
 <div id="search-by-author" class="section level3">
