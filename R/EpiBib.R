@@ -1,5 +1,5 @@
 
-url <- paste0("https://sites.socialdatasciencelab.org/data/epiBib/EpiBib.Rdata")
+url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
 path <- file.path(tempdir(), "temp.Rdata")
 curl::curl_download(url, path)
 #reading the data
