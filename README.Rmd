@@ -148,7 +148,7 @@ The *bibliometrix* package allows a thorough bibliometric analysis using R. Our 
 
 Let us first propose a simple count of the references on the coronaviruses literature (see Figure 1).  In Figure 1, the historical development of research on coronaviruses can be analyzed as having three stages: exploration, initial development and rapid development in the past year and the current year.
 
-```{r, echo = FALSE, eval = TRUE, include=FALSE}
+```{r, echo = FALSE, eval = FALSE, include=FALSE}
 # Downloading the data
 library(EpiBibR)
 library(bibliometrix)
@@ -163,7 +163,7 @@ results <- biblioAnalysis(MM, sep = ";")
 S <- summary(object = results, k = 10, pause = FALSE)
 ```
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,eval=FALSE}
 # Most Productive Authors
 
 library(bibliometrix)
@@ -227,7 +227,7 @@ p3 <- ggplot(df, aes(x = Year, y = Articles, colour = cond)) +
 rm(df)
 ```
 
-```{r,echo=FALSE,message=FALSE,eval=TRUE,fig.cap = "(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%'}
+```{r,echo=FALSE,message=FALSE,eval=FALSE,fig.cap = "(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%'}
 
 ggdraw() +
   draw_plot(p3, 0, .5, 1, .5) +
@@ -239,6 +239,10 @@ ggdraw() +
 
 ```
 
+```{r, eval = TRUE, fig.cap ="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%', echo=FALSE}
+knitr::include_graphics("./vignettes/figure1.png")
+
+```
 
 ## Copyrights
 

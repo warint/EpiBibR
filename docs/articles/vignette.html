@@ -86,7 +86,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 28,000 references (on April 21, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 51,539 references (on June 26, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -237,6 +237,145 @@ Table 1. Features accessible through the package.
 <h3 class="hasAnchor">
 <a href="#search-by-source" class="anchor"></a>Search by source</h3>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">bio_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_source.html">EpiBib_source</a></span>(<span class="st">"bio"</span>)</pre></body></html></div>
+</div>
+</div>
+<div id="bibliometric-analysis" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bibliometric-analysis" class="anchor"></a>Bibliometric Analysis</h2>
+<p>The <em>Bibliometrix</em> package allows a thorough bibliometric analysis using R. Our EpiBib data have been designed to integrate easily with the <em>Bibliometrix</em> package. A shinyapp is also available <code><a href="https://rdrr.io/pkg/bibliometrix/man/biblioshiny.html">biblioshiny()</a></code>..</p>
+<div id="biblioshiny" class="section level3">
+<h3 class="hasAnchor">
+<a href="#biblioshiny" class="anchor"></a>Biblioshiny</h3>
+<p>The <a href="https://bibliometrix.org/Biblioshiny.html">biblioshiny</a> function has been developed to assist people in their bibliometric analysis. By its user-friendly interface, biblioshiny facilitates the use of Bibliometrix’s main analysis tools and allows the creation of graphs and visuals.</p>
+</div>
+<div id="biblioshiny-procedure-and-examples" class="section level3">
+<h3 class="hasAnchor">
+<a href="#biblioshiny-procedure-and-examples" class="anchor"></a>Biblioshiny : Procedure and Examples</h3>
+<p>This procedure is based on the one made by the creators of the Bibliometrix package (Aria and Cuccurullo 2017).</p>
+<p>Step 1 - Load the Bibliometrix package and load the biblioshiny function</p>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">bibliometrix</span>)
+<span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioshiny.html">biblioshiny</a></span>()</pre></body></html></div>
+<p>Step 2 - Download an example at the following <a href="https://www.bibliometrix.org/datasets/joi.zip">link</a> . It includes all articles published by the Journal of Informetrics from 2007 to 2017.</p>
+<p>Step 2 - In the Load menu, select ‘Web of Knowledge’ as database and ‘Plaintext’ as file format.</p>
+<p>Step 3 - Choose and load the file joi.zip using the browse button.</p>
+<p>Step 4 - Try the shiny app to create analytics and plots for three different level metrics and analysis of three structures of Knowledge (K-structures).</p>
+</div>
+<div id="an-algorithmic-systematic-literature-review-of-epibib" class="section level3">
+<h3 class="hasAnchor">
+<a href="#an-algorithmic-systematic-literature-review-of-epibib" class="anchor"></a>An Algorithmic Systematic Literature Review of EpiBib</h3>
+<p>By using Bibliometrix tools to analyse our EpiBib’s data, we were able to propose a simple count of the references on the coronaviruses literature and even upgrade the original visuals.</p>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="co"># Load the packages</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">bibliometrix</span>)
+
+<span class="co"># Load EpiBib's data</span>
+<span class="no">MM</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/EpiBib_references.html">EpiBib_references</a></span>()
+
+<span class="co"># Only fo 2020</span>
+<span class="no">M</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/EpiBib_year.html">EpiBib_year</a></span>(<span class="fl">2020</span>)
+
+<span class="co"># Summary bibliometric results</span>
+<span class="no">results</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioAnalysis.html">biblioAnalysis</a></span>(<span class="no">MM</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>)
+<span class="no">S</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="kw">object</span> <span class="kw">=</span> <span class="no">results</span>, <span class="kw">k</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">pause</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p>Summary includes info such as the number of documents, the most productive authors, the most productive countries and the count of articles per year. To assist in understanding this summary, we have created these three grapics.</p>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="co"># Most Productive Authors</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">bibliometrix</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">reshape2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggsci</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">plyr</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggthemes</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">cowplot</span>)
+
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="kw pkg">plyr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/plyr/man/ldply.html">ldply</a></span>(<span class="no">S</span>, <span class="no">data.frame</span>)
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">df</span>, <span class="no">.id</span> <span class="kw">==</span> <span class="st">"MostProdAuthors"</span>, <span class="kw">select</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">Articles</span>, <span class="no">Authors.......</span>))
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span> <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span>(<span class="kw">Authors</span> <span class="kw">=</span> <span class="no">Authors.......</span>)
+
+<span class="no">df</span>$<span class="no">Articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">df</span>$<span class="no">Articles</span>)
+<span class="no">df</span>$<span class="no">Authors</span> <span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(<span class="no">df</span>$<span class="no">Authors</span>)
+
+<span class="no">p1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span>(<span class="no">Authors</span>, <span class="no">Articles</span>), <span class="kw">y</span> <span class="kw">=</span> <span class="no">Articles</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">Articles</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="kw">stat</span><span class="kw">=</span><span class="st">"identity"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Authors"</span>) +
+  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_hc.html">theme_hc</a></span>()
+
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span>(<span class="no">df</span>)
+
+<span class="co"># Most Productive Countries</span>
+
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="kw pkg">plyr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/plyr/man/ldply.html">ldply</a></span>(<span class="no">S</span>, <span class="no">data.frame</span>)
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">df</span>, <span class="no">.id</span> <span class="kw">==</span> <span class="st">"MostProdCountries"</span>, <span class="kw">select</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">Articles</span>, <span class="no">Country</span>))
+
+<span class="no">df</span>$<span class="no">Articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">df</span>$<span class="no">Articles</span>)
+<span class="no">df</span>$<span class="no">Country</span> <span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(<span class="no">df</span>$<span class="no">Country</span>)
+
+<span class="no">p2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span>(<span class="no">Country</span>, <span class="no">Articles</span>), <span class="kw">y</span> <span class="kw">=</span> <span class="no">Articles</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">Articles</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="kw">stat</span><span class="kw">=</span><span class="st">"identity"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Countries"</span>) +
+  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_hc.html">theme_hc</a></span>()
+
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span>(<span class="no">df</span>)
+
+<span class="co"># Count of articles per year</span>
+
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="kw pkg">plyr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/plyr/man/ldply.html">ldply</a></span>(<span class="no">S</span>, <span class="no">data.frame</span>)
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">df</span>, <span class="no">.id</span> <span class="kw">==</span> <span class="st">"AnnualProduction"</span>, <span class="kw">select</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">Year...</span>, <span class="no">Articles</span>))
+<span class="no">df</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span> <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span>(<span class="kw">Year</span> <span class="kw">=</span> <span class="no">Year...</span>)
+
+<span class="no">df</span>$<span class="no">Year</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span>(<span class="no">df</span>$<span class="no">Year</span>))
+<span class="no">df</span>$<span class="no">Articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">df</span>$<span class="no">Articles</span>)
+
+
+<span class="no">p3</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">Year</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">Articles</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">cond</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="kw">colour</span> <span class="kw">=</span> <span class="st">"#0072B2"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="kw">colour</span> <span class="kw">=</span> <span class="st">"#0072B2"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>( <span class="kw">x</span> <span class="kw">=</span> <span class="st">""</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">90</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(<span class="kw">breaks</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">1950</span>,<span class="fl">2020</span>, <span class="fl">5</span>)) +
+  <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_hc.html">theme_hc</a></span>()
+
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span>(<span class="no">df</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb15"><html><body><pre class="r">
+<span class="fu"><a href="https://rdrr.io/pkg/cowplot/man/ggdraw.html">ggdraw</a></span>() +
+  <span class="fu"><a href="https://rdrr.io/pkg/cowplot/man/draw_plot.html">draw_plot</a></span>(<span class="no">p3</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">1</span>, <span class="fl">.5</span>) +
+  <span class="fu"><a href="https://rdrr.io/pkg/cowplot/man/draw_plot.html">draw_plot</a></span>(<span class="no">p1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">.5</span>) +
+  <span class="fu"><a href="https://rdrr.io/pkg/cowplot/man/draw_plot.html">draw_plot</a></span>(<span class="no">p2</span>, <span class="fl">.5</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">.5</span>) +
+  <span class="fu"><a href="https://rdrr.io/pkg/cowplot/man/draw_plot_label.html">draw_plot_label</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0.5</span>), <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="kw">size</span> <span class="kw">=</span> <span class="fl">15</span>)</pre></body></html></div>
+<div class="figure">
+<img src="figure1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%"><p class="caption">
+</p>
+<ol style="list-style-type: upper-alpha"><li>Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries
+
+</li></ol>
+</div>
+
+<p>We can also use powerful techniques such as Social Network Theory to find potential clusters of topics, clusters of researchers and clusters of country collaborations. The U.S. and China produce the bulk of the research on coronaviruses.</p>
+<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="co"># Country Collaboration Network</span>
+<span class="no">M</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/metaTagExtraction.html">metaTagExtraction</a></span>(<span class="no">M</span>, <span class="kw">Field</span> <span class="kw">=</span> <span class="st">"AU_CO"</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>)
+<span class="no">NetMatrix</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioNetwork.html">biblioNetwork</a></span>(<span class="no">M</span>, <span class="kw">analysis</span> <span class="kw">=</span> <span class="st">"collaboration"</span>, <span class="kw">network</span> <span class="kw">=</span> <span class="st">"countries"</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>)
+
+<span class="co"># Plot the network</span>
+
+<span class="no">net1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/networkPlot.html">networkPlot</a></span>(<span class="no">NetMatrix</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="no">NetMatrix</span>)[<span class="fl">1</span>], <span class="kw">Title</span> <span class="kw">=</span> <span class="st">""</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"sphere"</span>, <span class="kw">size</span><span class="kw">=</span><span class="fl">TRUE</span>, <span class="kw">remove.multiple</span><span class="kw">=</span><span class="fl">FALSE</span>, <span class="kw">labelsize</span><span class="kw">=</span><span class="fl">3</span>, <span class="kw">cluster</span><span class="kw">=</span><span class="st">"none"</span>)</pre></body></html></div>
+<div class="figure">
+<img src="figure5.png" alt="Country Collaboration Network" width="60%"><p class="caption">
+Country Collaboration Network
+</p>
+</div>
+<div id="to-go-further" class="section level4">
+<h4 class="hasAnchor">
+<a href="#to-go-further" class="anchor"></a>To go further</h4>
+<ul>
+<li><a href="https://bibliometrix.org/Biblioshiny.html">A shiny app by Bibliometrix</a></li>
+<li><a href="https://www.bibliometrix.org/biblioshiny/assets/player/KeynoteDHTMLPlayer.html#0">biblioshiny tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=9YwVhFEovCA&amp;feature=youtu.be">Bibliometrics (17): The Biblioshiny App For Non-Coders | Bibliometrix R Package (video)</a></li>
+<li><a href="https://bibliometrix.org/index.html">Bibliometrics</a></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
