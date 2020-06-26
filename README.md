@@ -26,7 +26,7 @@ differences. The later is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 28,000 references (on April 21, 2020) and
+proposes 22 features for the 48,000 references (on June 15, 2020) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -80,8 +80,7 @@ of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
 
 <center>
 
-Table 1. Features accessible through the
-package.
+Table 1. Features accessible through the package.
 
 </center>
 
@@ -195,8 +194,7 @@ Let us first propose a simple count of the references on the
 coronaviruses literature (see Figure 1). In Figure 1, the historical
 development of research on coronaviruses can be analyzed as having three
 stages: exploration, initial development and rapid development in the
-past year and the current
-year.
+past year and the current year.
 
 <div class="figure">
 
