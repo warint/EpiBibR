@@ -1,5 +1,6 @@
 ---
 title: "EpiBibR's Reproducible Bibliometric Material"
+author: "Thierry Warin"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{reproducibleMaterial}
@@ -12,10 +13,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
-
-```{r setup}
-library(EpiBibR)
 ```
 
 ## Bibliometric Analysis

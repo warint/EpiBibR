@@ -114,65 +114,13 @@ Next, call EpiBibR to make sure everything is installed correctly.
 library(EpiBibR)
 ```
 
-## How-To
-
 EpiBibR allows you to search bibligraphic references using several
 arguments : Author, author’s country of origin, author + year, keywords
-in the title, keywords in the abstract, year and source name.
-
-### Retrieve bibliographic data
-
-To get the entire bibliographic dataframe contaning around 28 000
-references, use the `EpiBib_reference` function.
-
-``` r
-EpiBib_data <- EpiBib_references()
-```
-
-### Search by author
-
-It can be truly helpful to search references by the name of the author.
-For example, we will search all the articles writtin by Philippe Colson.
-
-``` r
-colson_articles <- EpiBib_author("Colson")
-```
-
-### Search by author’s country of origin.
-
-``` r
-canada_articles <- EpiBib_country("canada")
-```
-
-### Search by author and year
-
-``` r
-yang2019 <- EpiBib_AU_YE(author = "yang", year = 2019)
-```
-
-### Search by keywords in title
-
-``` r
-covid_articles <- EpiBib_title("covid")
-```
-
-### Search by keywords in the abstract
-
-``` r
-coronavirus_articles <- EpiBib_abstract("coronavirus")
-```
-
-### Search by year
-
-``` r
-A2020_articles <- EpiBib_year(2020)
-```
-
-### Search by source
-
-``` r
-bio_articles <- EpiBib_source("bio")
-```
+in the title, keywords in the abstract, year and source name. You can
+follow the procedure through our [Practical
+Guide](https://warint.github.io/EpiBibR/articles/vignette.html) and
+access to [reproducible bibliometric
+material](https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html)
 
 # What to do after using EpiBibR
 

@@ -57,7 +57,7 @@
       <a href="articles/reproducibleMaterial.html">EpiBibR's Reproducible Bibliometric Material</a>
     </li>
     <li>
-      <a href="articles/vignette.html">How to</a>
+      <a href="articles/vignette.html">Pratical Guide</a>
     </li>
   </ul>
 </li>
@@ -189,53 +189,7 @@
 <div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/EpiBibR"</span>)</pre></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
-</div>
-<div id="how-to" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to" class="anchor"></a>How-To</h2>
-<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, author + year, keywords in the title, keywords in the abstract, year and source name.</p>
-<div id="retrieve-bibliographic-data" class="section level3">
-<h3 class="hasAnchor">
-<a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
-<p>To get the entire bibliographic dataframe contaning around 28 000 references, use the <code>EpiBib_reference</code> function.</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_references.html">EpiBib_references</a></span>()</pre></div>
-</div>
-<div id="search-by-author" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-author" class="anchor"></a>Search by author</h3>
-<p>It can be truly helpful to search references by the name of the author. For example, we will search all the articles writtin by Philippe Colson.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">colson_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_author.html">EpiBib_author</a></span>(<span class="st">"Colson"</span>)</pre></div>
-</div>
-<div id="search-by-authors-country-of-origin" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-authors-country-of-origin" class="anchor"></a>Search by author’s country of origin.</h3>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">canada_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_country.html">EpiBib_country</a></span>(<span class="st">"canada"</span>)</pre></div>
-</div>
-<div id="search-by-author-and-year" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-author-and-year" class="anchor"></a>Search by author and year</h3>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="no">yang2019</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_AU_YE.html">EpiBib_AU_YE</a></span>(<span class="kw">author</span> <span class="kw">=</span> <span class="st">"yang"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="fl">2019</span>)</pre></div>
-</div>
-<div id="search-by-keywords-in-title" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-keywords-in-title" class="anchor"></a>Search by keywords in title</h3>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">covid_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_title.html">EpiBib_title</a></span>(<span class="st">"covid"</span>)</pre></div>
-</div>
-<div id="search-by-keywords-in-the-abstract" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-keywords-in-the-abstract" class="anchor"></a>Search by keywords in the abstract</h3>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">coronavirus_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_abstract.html">EpiBib_abstract</a></span>(<span class="st">"coronavirus"</span>)</pre></div>
-</div>
-<div id="search-by-year" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-year" class="anchor"></a>Search by year</h3>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="no">A2020_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_year.html">EpiBib_year</a></span>(<span class="fl">2020</span>)</pre></div>
-</div>
-<div id="search-by-source" class="section level3">
-<h3 class="hasAnchor">
-<a href="#search-by-source" class="anchor"></a>Search by source</h3>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="no">bio_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/EpiBib_source.html">EpiBib_source</a></span>(<span class="st">"bio"</span>)</pre></div>
-</div>
+<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, author + year, keywords in the title, keywords in the abstract, year and source name. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Pratical Guide</a> and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
 </div>
 </div>
 <div id="what-to-do-after-using-epibibr" class="section level1">
@@ -256,7 +210,7 @@
 <p class="caption">
 1) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries
 </p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">&lt;</span><span class="er">/</span>div<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">&lt;</span><span class="er">/</span>div<span class="op">&gt;</span></span></code></pre></div>
 </div>
 <div id="copyrights" class="section level2">
 <h2 class="hasAnchor">
