@@ -184,10 +184,11 @@ ggdraw() +
 
 ```
 
-```{r, eval = TRUE, fig.cap ="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries", out.width = '70%', echo=FALSE}
-knitr::include_graphics("./vignettes/figure1.png")
-
-```
+<center>
+<div style="width:500px; height:500px">
+![](./vignettes/figure1.png)
+</div>
+</center>
 
 ## Copyrights
 

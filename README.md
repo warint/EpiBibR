@@ -144,16 +144,15 @@ development of research on coronaviruses can be analyzed as having three
 stages: exploration, initial development and rapid development in the
 past year and the current year.
 
-<div class="figure">
+<center>
 
-<img src="./vignettes/figure1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%" />
+<div style="width:500px; height:500px">
 
-<p class="caption">
+![](./vignettes/figure1.png)
 
-1)  Count of Articles, (B) Most Productive Authors and (C) Most
-    Productive Countries
-    </p>
-    </div>
+</div>
+
+</center>
 
 ## Copyrights
 
