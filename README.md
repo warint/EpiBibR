@@ -138,22 +138,6 @@ R. Our EpiBib data have been designed to integrate easily with the
 This package has been used extensively for various exercises mobilizing
 massive amounts of data.
 
-Let us first propose a simple count of the references on the
-coronaviruses literature (see Figure 1). In Figure 1, the historical
-development of research on coronaviruses can be analyzed as having three
-stages: exploration, initial development and rapid development in the
-past year and the current year.
-
-<center>
-
-<div style="width:500px; height:500px">
-
-![](./vignettes/figure1.png)
-
-</div>
-
-</center>
-
 ## Copyrights
 
 Information that is created by or for the US government on this site is
