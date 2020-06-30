@@ -1,5 +1,5 @@
 ---
-title: "EpibibR: Vignette"
+title: "EpiBibR: How to & Reproducible Material"
 author: "Thierry Warin"
 output: rmarkdown::html_vignette
 vignette: >
