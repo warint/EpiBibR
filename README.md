@@ -122,7 +122,7 @@ Guide](https://warint.github.io/EpiBibR/articles/vignette.html) and
 access to [reproducible bibliometric
 material](https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html)
 
-## Data refresh (forthcoming functionality)
+## Data update (forthcoming functionality)
 
 This development version is updated on a daily basis. The EpibibR CRAN version is updated every quarter. To obtain the most recent data available from the development version, use the update_dataset() function:
 
