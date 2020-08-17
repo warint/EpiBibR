@@ -133,6 +133,16 @@ update_dataset()
 
 Note: The R session must be restarted to benefit from the update.
 
+Examples:
+
+``` r
+# update with a question prompt
+update_dataset(silence = FALSE)
+
+#update without a question prompt
+update_dataset(silence = TRUE)
+```
+
 # What to do after using EpiBibR
 
 ## Read the Article
