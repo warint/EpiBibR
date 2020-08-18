@@ -2,7 +2,7 @@
 update_dataset <- function(silence = FALSE){
   flag <- FALSE
 
-  # dans ce qui suit, on va comparer la date du fichier de données du package sur CRAN avec la date du fichier de données du pacakge dans sa version de développement sur Github. On va aller chercher les fichiers de données respectifs:
+  # dans ce qui suit, on va comparer la date du fichier de données du package sur CRAN avec la date du fichier de données du package dans sa version de développement sur Github. On va aller chercher les fichiers de données respectifs:
   
   ## d'abord, sur CRAN:
   
@@ -22,7 +22,7 @@ update_dataset <- function(silence = FALSE){
   unlink(tempdir())
   
   
-  epibibr_github$date <- base::as.Date(epibibr_github$date) # il faudara créer une colonne data si elle n'existe pas dans le fichier de données avec la date de mise à jour du package sur Github
+  epibibr_github$date <- base::as.Date(epibibr_github$date) # il faudra créer une colonne data si elle n'existe pas dans le fichier de données avec la date de mise à jour du package sur Github
   
   
   if(!base::identical(epibibr_github, epibibr_cran)){
