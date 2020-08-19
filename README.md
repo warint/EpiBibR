@@ -26,7 +26,7 @@ differences. The later is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 67,647 references (on August 17, 2020) and
+proposes 22 features for the 68,688 references (on August 19, 2020) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -124,7 +124,10 @@ material](https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html)
 
 ## Data update (forthcoming functionality)
 
-This development version is updated on a daily basis. The EpibibR CRAN version is updated every quarter. To obtain the most recent data available from the development version, use the update_dataset() function:
+This development version is updated on a daily basis. The EpibibR CRAN
+version is updated every quarter. To obtain the most recent data
+available from the development version, use the update\_dataset()
+function:
 
 ``` r
 library(EpibibR)

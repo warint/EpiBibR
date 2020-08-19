@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 # Overview
 
-EpiBibR stands for "epidemiology-based bibliography for R." The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 67,647 references (on August 17, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher's pipeline.
+EpiBibR stands for "epidemiology-based bibliography for R." The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 68,688 references (on August 19, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher's pipeline.
 
 Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).
 
@@ -80,6 +80,28 @@ library(EpiBibR)
 ```
 
 EpiBibR allows you to search bibligraphic references using several arguments : Author, author's country of origin, author + year, keywords in the title, keywords in the abstract, year and source name. You can follow the procedure through our [Practical Guide](https://warint.github.io/EpiBibR/articles/vignette.html) and access to [reproducible bibliometric material](https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html)
+
+## Data update (forthcoming functionality)
+
+This development version is updated on a daily basis. The EpibibR CRAN version is updated every quarter. To obtain the most recent data available from the development version, use the update_dataset() function:
+
+``` r
+library(EpibibR)
+update_dataset()
+```
+
+Note: The R session must be restarted to benefit from the update.
+
+Examples:
+
+``` r
+# update with a question prompt
+update_dataset(silence = FALSE)
+
+#update without a question prompt
+update_dataset(silence = TRUE)
+```
+
 
 # What to do after using EpiBibR
 
