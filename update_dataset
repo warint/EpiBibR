@@ -18,7 +18,7 @@ update_dataset <- function(silence = FALSE){
   
   epibibr_github <- utils::load(rData)
   
-  ## and then removing the temp folder
+  ## and then removing the temp folder (to be )
   unlink(tempdir())
   
   
