@@ -66,5 +66,8 @@ update_dataset <- function(silence = FALSE){
   } else {
     base::message("No updates are available")
   }
-
+  
+# removing the temp folder and creating a data frame
+  unlink(tempdir())
+  
 }
