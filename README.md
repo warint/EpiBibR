@@ -154,7 +154,7 @@ R. Our EpiBibR data have been designed to integrate easily with the
 This package has been used extensively for various exercises mobilizing
 massive amounts of data.
 
-# Cite ‘epiBibR’
+## Cite ‘epiBibR’
 
 Open access to the article explaining EpibibR
 \[[here](https://www.jmir.org/2020/8/e19615/)\]
@@ -184,7 +184,7 @@ url="http://www.ncbi.nlm.nih.gov/pubmed/32730218"
 }
 ```
 
-# Acknowledgements
+## Acknowledgements
 
 The author would like to thank the Center for Interuniversity Research
 and Analysis of Organizations (CIRANO, Montreal) for its support, as
