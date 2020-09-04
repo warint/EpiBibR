@@ -3,7 +3,7 @@ title: "EpiBibR's Reproducible Bibliometric Material"
 author: "Thierry Warin"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{reproducibleMaterial}
+  %\VignetteIndexEntry{EpiBibR's Reproducible Bibliometric Material}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
