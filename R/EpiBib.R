@@ -53,6 +53,12 @@ EpiBib_references <- function() {
 #' df <- EpiBib_author("Yang")
 
 EpiBib_author <- function(author) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(author)) {
     EpiBib_data
   } else {
@@ -81,6 +87,12 @@ EpiBib_author <- function(author) {
 #' df <- EpiBib_country("England")
 
 EpiBib_country <- function(country) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(country)) {
     EpiBib_data
   } else {
@@ -107,6 +119,12 @@ EpiBib_country <- function(country) {
 
 
 EpiBib_title <- function(title) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(title)) {
     EpiBib_data
   } else {
@@ -133,6 +151,12 @@ EpiBib_title <- function(title) {
 
 
 EpiBib_year <- function(year) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(year)) {
     EpiBib_data
   } else {
@@ -161,6 +185,12 @@ EpiBib_year <- function(year) {
 
 
 EpiBib_source <- function(source) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(source)) {
     EpiBib_data
   } else {
@@ -188,6 +218,12 @@ EpiBib_source <- function(source) {
 #'
 
 EpiBib_abstract <- function(abstract) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (missing(abstract)) {
     EpiBib_data
   } else {
@@ -214,6 +250,12 @@ EpiBib_abstract <- function(abstract) {
 
 
 EpiBib_AU_YE <- function(author = NULL, year = NULL) {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
   if (is.null(author) & is.null(year)) {
     EpiBib_data
   } else if (is.null(author)) {
