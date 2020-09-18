@@ -7,7 +7,39 @@ rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
 load(rData)  
 
 
-# Function 1: Retrieving Bibliographic Data
+# Function 1: Update_dataset
+
+#' update_dataset
+#'
+#' @description this function allows you to update your dataset
+#'
+#' @return An updated dataset
+#' @export
+#' @import curl
+#' 
+#' @examples
+#' update_dataset()
+
+
+
+update_dataset <- function() {
+  url <- paste0("https://warin.ca/ressources/data/epiBib/EpiBib.Rdata")
+  path <- file.path(tempdir(), "temp.Rdata")
+  curl::curl_download(url, path)
+  #reading the data
+  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
+  load(rData)  
+  
+}
+
+
+
+
+
+
+
+
+# Function 2: Retrieving Bibliographic Data
 
 #' EpiBib_references
 #'
