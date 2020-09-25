@@ -122,14 +122,13 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">bibliometrix</span>)
 
-<span class="co"># Load EpiBib's data</span>
-<span class="no">MM</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/EpiBib_references.html">EpiBib_references</a></span>()
+<span class="co"># Retrieve EpiBib_data for 2020</span>
+<span class="no">M</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">year</span> <span class="kw">=</span> <span class="st">"2020"</span>)
 
-<span class="co"># Only fo 2020</span>
-<span class="no">M</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/EpiBib_year.html">EpiBib_year</a></span>(<span class="fl">2020</span>)
+
 
 <span class="co"># Summary bibliometric results</span>
-<span class="no">results</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioAnalysis.html">biblioAnalysis</a></span>(<span class="no">MM</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>)
+<span class="no">results</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioAnalysis.html">biblioAnalysis</a></span>(<span class="no">M</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">";"</span>)
 <span class="no">S</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="kw">object</span> <span class="kw">=</span> <span class="no">results</span>, <span class="kw">k</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">pause</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
 <p>Summary includes info such as the number of documents, the most productive authors, the most productive countries and the count of articles per year. To assist in understanding this summary, we have created these three grapics.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co"># Most Productive Authors</span>

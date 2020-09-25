@@ -96,7 +96,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 70,337 references (on August 24, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 81,042 references (on September 24, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -209,44 +209,50 @@ Table 1. Features accessible through the package.
 <div id="retrieve-bibliographic-data" class="section level3">
 <h3 class="hasAnchor">
 <a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
-<p>To get the entire bibliographic dataframe contaning around 50 000 references, use the <code>EpiBib_reference</code> function.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">EpiBib_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_references.html">EpiBib_references</a></span>()</pre></body></html></div>
+<p>To get the entire bibliographic dataframe contaning more than 80 000 references, use the <code>epibib_data</code> function.</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">complete_data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>()</pre></body></html></div>
 </div>
 <div id="search-by-author" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-author" class="anchor"></a>Search by author</h3>
 <p>It can be truly helpful to search references by the name of the author. For example, we will search all the articles writtin by Philippe Colson.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">colson_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_author.html">EpiBib_author</a></span>(<span class="st">"Colson"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">colson_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">author</span> <span class="kw">=</span> <span class="st">"Colson"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-authors-country-of-origin-" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-authors-country-of-origin-" class="anchor"></a>Search by author’s country of origin.</h3>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">canada_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_country.html">EpiBib_country</a></span>(<span class="st">"canada"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">canada_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">country</span> <span class="kw">=</span> <span class="st">"Canada"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-author-and-year" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-author-and-year" class="anchor"></a>Search by author and year</h3>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">yang2019</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_AU_YE.html">EpiBib_AU_YE</a></span>(<span class="kw">author</span> <span class="kw">=</span> <span class="st">"yang"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="fl">2019</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">yang2020</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">author</span> <span class="kw">=</span><span class="st">"Yang"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="st">"2020"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-keywords-in-title" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-keywords-in-title" class="anchor"></a>Search by keywords in title</h3>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">covid_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_title.html">EpiBib_title</a></span>(<span class="st">"covid"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">covid_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"covid"</span>)</pre></body></html></div>
+<p>As you may have noticed, you can keep more than one argument to refine your search.</p>
+</div>
+<div id="search-by-keywords-in-title-and-by-year" class="section level3">
+<h3 class="hasAnchor">
+<a href="#search-by-keywords-in-title-and-by-year" class="anchor"></a>Search by keywords in title and by year</h3>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">covid2020_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"covid"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="st">"2020"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-keywords-in-the-abstract" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-keywords-in-the-abstract" class="anchor"></a>Search by keywords in the abstract</h3>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">coronavirus_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_abstract.html">EpiBib_abstract</a></span>(<span class="st">"coronavirus"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">coronavirus_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">abstract</span> <span class="kw">=</span> <span class="st">"coronavirus"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-year" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-year" class="anchor"></a>Search by year</h3>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">A2020_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_year.html">EpiBib_year</a></span>(<span class="fl">2020</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">A2020_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">year</span> <span class="kw">=</span> <span class="st">"2020"</span>)</pre></body></html></div>
 </div>
 <div id="search-by-source" class="section level3">
 <h3 class="hasAnchor">
 <a href="#search-by-source" class="anchor"></a>Search by source</h3>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">bio_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/EpiBib_source.html">EpiBib_source</a></span>(<span class="st">"bio"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">bio_articles</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/epibib_data.html">epibib_data</a></span>(<span class="kw">source</span> <span class="kw">=</span> <span class="st">"bio"</span>)</pre></body></html></div>
 </div>
 </div>
 </div>

@@ -91,7 +91,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 70,337 references (on August 24, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 81,042 references (on September 24, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -198,20 +198,6 @@
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
 <p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, author + year, keywords in the title, keywords in the abstract, year and source name. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Practical Guide</a> and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
 </div>
-<div id="data-update-forthcoming-functionality" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-update-forthcoming-functionality" class="anchor"></a>Data update (forthcoming functionality)</h2>
-<p>This development version is updated on a daily basis. The EpibibR CRAN version is updated every quarter. To obtain the most recent data available from the development version, use the update_dataset() function:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpibibR</span>)
-<span class="fu">update_dataset</span>()</pre></div>
-<p>Note: The R session must be restarted to benefit from the update.</p>
-<p>Examples:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="co"># update with a question prompt</span>
-<span class="fu">update_dataset</span>(<span class="kw">silence</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
-
-<span class="co">#update without a question prompt</span>
-<span class="fu">update_dataset</span>(<span class="kw">silence</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></div>
-</div>
 <div id="bibliometric-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bibliometric-analysis" class="anchor"></a>Bibliometric Analysis</h2>
@@ -223,7 +209,7 @@
 <p>Open access to the article explaining EpibibR <br><span class="math display">[<em>h</em><em>e</em><em>r</em><em>e</em>](<em>h</em><em>t</em><em>t</em><em>p</em><em>s</em> : //<em>w</em><em>w</em><em>w</em>.<em>j</em><em>m</em><em>i</em><em>r</em>.<em>o</em><em>r</em><em>g</em>/2020/8/<em>e</em>19615/)</span><br></p>
 <p>Please cite as:</p>
 <p>Warin T, <a href="https://www.jmir.org/2020/8/e19615/">“Global Research on Coronaviruses: An R Package”</a>, J Med Internet Res 2020;22(8):e19615, DOI: 10.2196/19615, PMID: 32730218, PMCID: 7423387</p>
-<div class="sourceCode" id="cb5"><pre class="r">@Article{info:doi/10.2196/19615,
+<div class="sourceCode" id="cb3"><pre class="r">@Article{info:doi/10.2196/19615,
 author="Warin, Thierry",
 title="Global Research on Coronaviruses: An R Package",
 journal="J Med Internet Res",

@@ -51,14 +51,13 @@ By using Bibliometrix tools to analyse our EpiBibR's data, we were able to propo
 library(EpiBibR)
 library(bibliometrix)
 
-# Load EpiBib's data
-MM<-EpiBib_references()
+# Retrieve EpiBib_data for 2020
+M <- epibib_data(year = "2020")
 
-# Only fo 2020
-M<-EpiBib_year(2020)
+
 
 # Summary bibliometric results
-results <- biblioAnalysis(MM, sep = ";")
+results <- biblioAnalysis(M, sep = ";")
 S <- summary(object = results, k = 10, pause = FALSE)
 ```
 
