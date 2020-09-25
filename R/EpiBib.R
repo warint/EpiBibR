@@ -75,7 +75,7 @@ EpiBib_references <- function() {
   load(rData)  
   EpiBib_data
   
-  .Deprecated(msg = "'EpiBib_references()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")    
+  .Deprecated(msg = "'EpiBib_references()' will be removed in the next version and replaced by the simpler function 'epibib_data()'. 'epibib_data()' is already available.")    
 }
 
 
@@ -99,7 +99,7 @@ EpiBib_references <- function() {
 
 EpiBib_author <- function(author) {
   
-  .Deprecated(msg = "'EpiBib_author()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_author()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()'is already available.")
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
   path <- file.path(tempdir(), "temp.Rdata")
@@ -135,7 +135,7 @@ EpiBib_author <- function(author) {
 
 EpiBib_country <- function(country) {
   
-  .Deprecated(msg = "'EpiBib_country()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_country()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
@@ -172,7 +172,7 @@ EpiBib_country <- function(country) {
 
 EpiBib_title <- function(title) {
   
-  .Deprecated(msg = "'EpiBib_title()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_title()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
@@ -209,7 +209,7 @@ EpiBib_title <- function(title) {
 
 EpiBib_year <- function(year) {
   
-  .Deprecated(msg = "'EpiBib_year()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_year()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
@@ -248,7 +248,7 @@ EpiBib_year <- function(year) {
 
 EpiBib_source <- function(source) {
   
-  .Deprecated(msg = "'EpiBib_source()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_source()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
@@ -286,7 +286,7 @@ EpiBib_source <- function(source) {
 
 EpiBib_abstract <- function(abstract) {
   
-  .Deprecated(msg = "'EpiBib_abstract()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_abstract()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
@@ -323,7 +323,7 @@ EpiBib_abstract <- function(abstract) {
 
 EpiBib_AU_YE <- function(author = NULL, year = NULL) {
   
-  .Deprecated(msg = "'EpiBib_AU_YE()' will be removed in the next version and replaced by the simpler function 'epibib_data()'")
+  .Deprecated(msg = "'EpiBib_AU_YE()' will be removed in the next version and replaced by the simpler function 'epibib_data()'.'epibib_data()' is already available.")
   
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
