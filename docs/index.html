@@ -54,6 +54,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/previousFunctions.html">EpibibR: Vignette</a>
+    </li>
+    <li>
       <a href="articles/reproducibleMaterial.html">EpiBibR's Reproducible Bibliometric Material</a>
     </li>
     <li>
@@ -91,7 +94,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 81,042 references (on September 24, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 82,674 references (on October 1, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -196,7 +199,7 @@
 <div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/EpiBibR"</span>)</pre></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
-<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, author + year, keywords in the title, keywords in the abstract, year and source name. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Practical Guide</a> and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
+<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, keywords in the title, keywords in the abstract, year and source name. We have also created a new function that synthesizes our previous ones. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Practical Guide</a>, read our tutorial on previous functions<a href=""></a> and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
 </div>
 <div id="bibliometric-analysis" class="section level2">
 <h2 class="hasAnchor">

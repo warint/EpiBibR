@@ -67,6 +67,9 @@ epibib_data <- function(author = "", year = "", country = "", title = "", source
 
 
 EpiBib_references <- function() {
+  
+  .Deprecated(msg = "'EpiBib_references()' will be removed in the next version and replaced by the simpler function 'epibib_data()'. 'epibib_data()' is already available.")  
+  
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
   path <- file.path(tempdir(), "temp.Rdata")
   curl::curl_download(url, path)
@@ -74,8 +77,6 @@ EpiBib_references <- function() {
   rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
   load(rData)  
   EpiBib_data
-  
-  .Deprecated(msg = "'EpiBib_references()' will be removed in the next version and replaced by the simpler function 'epibib_data()'. 'epibib_data()' is already available.")    
 }
 
 
