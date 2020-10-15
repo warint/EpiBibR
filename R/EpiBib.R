@@ -10,9 +10,9 @@ load(rData)
 
 # Function 1: Retrieving Bibliographic Data
 
-#' epibib_data
+#' epibibr_data
 #'
-#' @description this function allows you to to find and display medical bibliographic data according to the selected parameters.
+#' @description This function allows you to find and display medical bibliographic data according to the selected parameters.
 #' If no arguments are filled, all data will be displayed.
 #' 
 #'
@@ -29,10 +29,10 @@ load(rData)
 #' @import curl
 #' 
 #' @examples
-#' EpiBib_data <- epibib_data()
+#' EpiBib_data <- epibibr_data()
 
 
-epibib_data <- function(author = "", year = "", country = "", title = "", source = "", abstract = "") {
+epibibr_data <- function(author = "", year = "", country = "", title = "", source = "", abstract = "") {
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
   path <- file.path(tempdir(), "temp.Rdata")
   curl::curl_download(url, path)
@@ -41,7 +41,7 @@ epibib_data <- function(author = "", year = "", country = "", title = "", source
   load(rData)
   EpiBib_data
   
-  EpiBib_data[, 1:ncol(EpiBib_data)][is.na(EpiBib_data[, 1:ncol(EpiBib_data)])] <- "NA"
+  EpiBib_data[, 1:ncol(EpiBib_data)][is.na(EpiBib_data[, 1:ncol(EpiBib_data)])] <- "MISSING999"
   
   EpiBib_grep <- with(EpiBib_data, EpiBib_data[grepl(author, AU, ignore.case = TRUE) &
                                                  grepl(year, PY, ignore.case = TRUE) &
@@ -49,5 +49,5 @@ epibib_data <- function(author = "", year = "", country = "", title = "", source
                                                  grepl(source, SO, ignore.case = TRUE) & 
                                                  grepl(abstract, AB, ignore.case = TRUE), ])
   
+  EpiBib_grep[ EpiBib_grep == "MISSING999" ] <- NA 
 }
-

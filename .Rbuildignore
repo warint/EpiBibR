@@ -8,3 +8,6 @@
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^figure1\.png$
+^\.figure1\.png$
+^\.figure5\.png$
+^\.figure6\.png$
