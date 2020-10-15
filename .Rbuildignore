@@ -7,3 +7,4 @@
 ^pkgdown$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^figure1\.png$
