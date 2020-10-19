@@ -131,7 +131,7 @@ epibibr_visual <- function(chart = "line_1", title = TRUE){
     if(title == TRUE){
       ggplot2::ggplot(data = EpiBib_AUCO[1:9,], ggplot2::aes(x = n, y = AU_CO, fill = AU_CO)) +
         ggplot2::geom_col() + 
-        ggplot2::xlab("Aarticles") + ggplot2::ylab("Countries") + 
+        ggplot2::xlab("Articles") + ggplot2::ylab("Countries") + 
         ggplot2::ggtitle("Most productive countries") +
         ggsci::scale_fill_uchicago() +
         ggplot2::theme_minimal() + 
