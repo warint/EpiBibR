@@ -66,7 +66,6 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
 #' 
 #' @import ggplot2
 #' @import ggsci
-#' @import dplyr
 #'
 #' 
 #' 
@@ -74,7 +73,7 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
 #' epibibr_visual(chart = "line_1", title = TRUE)
 
 epibibr_visual <- function(chart = "line_1", title = TRUE){
-  PY <- ..count.. <- AU <- AU_CO <- NULL
+  PY <- n <- AU <- desc <- AU_CO <- NULL
   
   url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
   path <- file.path(tempdir(), "temp.Rdata")
@@ -84,19 +83,21 @@ epibibr_visual <- function(chart = "line_1", title = TRUE){
   load(rData) 
   
   if(chart == "line_1"){
-    EpiBib_data$PY <- as.numeric(EpiBib_data$PY)
+    EpiBib_PY <- dplyr::count(EpiBib_data, PY)
+    EpiBib_PY <- stats::na.omit(EpiBib_PY)
+    EpiBib_PY$PY <- as.numeric(EpiBib_PY$PY)
     if(title == TRUE){
-      ggplot2::ggplot(data = EpiBib_data, ggplot2::aes(x = PY)) +
-        ggplot2::geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
-        ggplot2::geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
+      ggplot2::ggplot(data = EpiBib_PY) +
+        ggplot2::geom_line(aes(x = PY, y=n), size = 0.8, color = "olivedrab") + 
+        ggplot2::geom_point(aes(x = PY, y=n), size = 1.5, color = "olivedrab") + 
         ggplot2::ggtitle("Count of Articles") +
         ggplot2::xlab("") + ggplot2::ylab("Articles") + 
         ggplot2::theme_minimal() + 
         ggplot2::theme(legend.position = "none")
     } else {
-      ggplot2:: ggplot(data = EpiBib_data, ggplot2::aes(x = PY)) +
-        ggplot2::geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
-        ggplot2::geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
+      ggplot2::ggplot(data = EpiBib_PY) +
+        ggplot2::geom_line(aes(x = PY, y=n), size = 0.8, color = "olivedrab") + 
+        ggplot2::geom_point(aes(x = PY, y=n), size = 1.5, color = "olivedrab") + 
         ggplot2::ggtitle("") +
         ggplot2::xlab("") + ggplot2::ylab("Articles") + 
         ggplot2::theme_minimal() + 
