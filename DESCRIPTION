@@ -6,7 +6,7 @@ Authors@R:
     person("Thierry", "Warin", email = "thierry.warin@hec.ca", role =c("aut", "cre"), comment = c(ORCID = "0000-0002-5921-3428") )
 Description: This package allows to retrieve bibliographic medical data, primarily on COVID-19, and search references according to certain criteria.
 License: MIT + file LICENSE
-Imports: curl,ggplot2,ggsci, dplyr
+Imports: curl, ggplot2, ggsci, dplyr
 URL: https://warint.github.io/EpiBibR/
 Encoding: UTF-8
 LazyData: true

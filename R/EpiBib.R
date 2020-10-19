@@ -71,7 +71,7 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
 #' 
 #' 
 #' @examples
-#' epibibr_visual(chart = "line_1", title = TRUE){
+#' epibibr_visual(chart = "line_1", title = TRUE)
 
 epibibr_visual <- function(chart = "line_1", title = TRUE){
   PY <- ..count.. <- AU <- AU_CO <- NULL
@@ -86,63 +86,63 @@ epibibr_visual <- function(chart = "line_1", title = TRUE){
   if(chart == "line_1"){
     EpiBib_data$PY <- as.numeric(EpiBib_data$PY)
     if(title == TRUE){
-      ggplot(data = EpiBib_data, aes(x = PY)) +
-        geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
-        geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
-        ggtitle("Count of Articles") +
-        xlab("") + ylab("Articles") + 
-        theme_minimal() + 
-        theme(legend.position = "none")
+      ggplot2::ggplot(data = EpiBib_data, ggplot2::aes(x = PY)) +
+        ggplot2::geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
+        ggplot2::geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
+        ggplot2::ggtitle("Count of Articles") +
+        ggplot2::xlab("") + ggplot2::ylab("Articles") + 
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     } else {
-      ggplot(data = EpiBib_data, aes(x = PY)) +
-        geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
-        geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
-        ggtitle("") +
-        xlab("") + ylab("Articles") + 
-        theme_minimal() + 
-        theme(legend.position = "none")
+      ggplot2:: ggplot(data = EpiBib_data, ggplot2::aes(x = PY)) +
+        ggplot2::geom_line(aes(fill=..count..), stat="bin", bins = 30, size = 0.8, color = "olivedrab") + 
+        ggplot2::geom_point(aes(fill=..count..), stat="bin", bins = 30, size = 2.5, color = "olivedrab") + 
+        ggplot2::ggtitle("") +
+        ggplot2::xlab("") + ggplot2::ylab("Articles") + 
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     }
   } else if(chart == "bar_1"){
     EpiBib_AU <- dplyr::count(EpiBib_data, AU)
     EpiBib_AU <- dplyr::arrange(EpiBib_AU, desc(n))
     EpiBib_AU$AU <- factor(EpiBib_AU$AU, levels = unique(EpiBib_AU$AU)[order(EpiBib_AU$n)])
     if(title == TRUE){
-      ggplot(data = EpiBib_AU[2:10,], aes(x = n, y = AU, n, fill = AU)) +
-        geom_col() + 
-        xlab("Articles") + ylab("Authors") + 
-        ggtitle("Most Productive Authors") +
-        scale_fill_uchicago() +
-        theme_minimal() + 
-        theme(legend.position = "none")
+      ggplot2::ggplot(data = EpiBib_AU[2:10,], ggplot2::aes(x = n, y = AU, n, fill = AU)) +
+        ggplot2::geom_col() + 
+        ggplot2::xlab("Articles") + ggplot2::ylab("Authors") + 
+        ggplot2::ggtitle("Most Productive Authors") +
+        ggsci::scale_fill_uchicago() +
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     } else {
-      ggplot(data = EpiBib_AU[2:10,], aes(x = n, y = AU, n, fill = AU)) +
-        geom_col() + 
-        xlab("Articles") + ylab("Authors") + 
-        ggtitle("") +
+      ggplot2::ggplot(data = EpiBib_AU[2:10,], ggplot2::aes(x = n, y = AU, n, fill = AU)) +
+        ggplot2::geom_col() + 
+        ggplot2::xlab("Articles") + ggplot2::ylab("Authors") + 
+        ggplot2::ggtitle("") +
         scale_fill_uchicago() +
-        theme_minimal() + 
-        theme(legend.position = "none")
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     }
   } else if(chart == "bar_2"){
     EpiBib_AUCO <- dplyr::count(EpiBib_data, AU_CO)
     EpiBib_AUCO <- dplyr::arrange(EpiBib_AUCO, desc(n))
     EpiBib_AUCO$AU_CO <- factor(EpiBib_AUCO$AU_CO, levels = unique(EpiBib_AUCO$AU_CO)[order(EpiBib_AUCO$n)])
     if(title == TRUE){
-      ggplot(data = EpiBib_AUCO[1:9,], aes(x = n, y = AU_CO, fill = AU_CO)) +
-        geom_col() + 
-        xlab("Aarticles") + ylab("Countries") + 
-        ggtitle("Most productive countries") +
-        scale_fill_uchicago() +
-        theme_minimal() + 
-        theme(legend.position = "none")
+      ggplot2::ggplot(data = EpiBib_AUCO[1:9,], ggplot2::aes(x = n, y = AU_CO, fill = AU_CO)) +
+        ggplot2::geom_col() + 
+        ggplot2::xlab("Aarticles") + ggplot2::ylab("Countries") + 
+        ggplot2::ggtitle("Most productive countries") +
+        ggsci::scale_fill_uchicago() +
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     } else {
-      ggplot(data = EpiBib_AUCO[1:9,], aes(x = n, y = AU_CO, fill = AU_CO)) +
-        geom_col() + 
-        xlab("Aarticles") + ylab("Countries") + 
-        ggtitle("") +
-        scale_fill_uchicago() +
-        theme_minimal() + 
-        theme(legend.position = "none")
+      ggplot2::ggplot(data = EpiBib_AUCO[1:9,], ggplot2::aes(x = n, y = AU_CO, fill = AU_CO)) +
+        ggplot2::geom_col() + 
+        ggplot2::xlab("Articles") + ggplot2::ylab("Countries") + 
+        ggplot2::ggtitle("") +
+        ggsci::scale_fill_uchicago() +
+        ggplot2::theme_minimal() + 
+        ggplot2::theme(legend.position = "none")
     }
   } else {
     stop("invalid arguments")
