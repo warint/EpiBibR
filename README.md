@@ -22,7 +22,7 @@ instance, the scientific community in Artificial Intelligence and Data
 Science may use this package to accelerate new research insights about
 covid-19. The package follows the methodology put in place by the Allen
 Institute and its partners to create the CORD-19 dataset with some
-differences. The later is accessible through downloads of sub-sets or
+differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
