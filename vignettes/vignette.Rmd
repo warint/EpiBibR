@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 # Overview
 
-EpiBibR stands for "epidemiology-based bibliography for R." The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 85,319 references (on October 13, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher's pipeline.
+EpiBibR stands for "epidemiology-based bibliography for R." The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 86,733 references (on October 20, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher's pipeline.
 
 Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).
 
@@ -84,66 +84,84 @@ EpiBibR allows you to search bibligraphic references using several arguments : A
 To get the entire bibliographic dataframe contaning more than 80 000 references, use the `epibib_data` function.
 
 ```{r,eval=FALSE}
-complete_data <- epibib_data()
+complete_data <- epibibr_data()
 ```
 
-### Search by author
+#### Search by author
 
 It can be truly helpful to search references by the name of the author. For example, we will search all the articles writtin by Philippe Colson.
 
 ```{r,eval=FALSE}
-colson_articles <- epibib_data(author = "Colson")
+colson_articles <- epibibr_data(author = "Colson")
 ```
 
-### Search by author's country of origin.
+#### Search by author's country of origin.
 
 ```{r,eval=FALSE}
-canada_articles <- epibib_data(country = "Canada")
+canada_articles <- epibibr_data(country = "Canada")
 ```
 
-### Search by author and year
+#### Search by author and year
 
 ```{r,eval=FALSE}
-yang2020 <- epibib_data(author ="Yang", year = "2020")
+yang2020 <- epibibr_data(author ="Yang", year = "2020")
 ```
 
-### Search by keywords in title
+#### Search by keywords in title
 
 ```{r,eval=FALSE}
-covid_articles <- epibib_data(title = "covid")
+covid_articles <- epibibr_data(title = "covid")
 ```
 
 As you may have noticed, you can keep more than one argument to refine your search.
 
-### Search by keywords in title and by year
+#### Search by keywords in title and by year
 
 ```{r,eval=FALSE}
-covid2020_articles <- epibib_data(title = "covid", year = "2020")
+covid2020_articles <- epibibr_data(title = "covid", year = "2020")
 ```
 
 
-### Search by keywords in the abstract
+#### Search by keywords in the abstract
 
 ```{r,eval=FALSE}
-coronavirus_articles <- epibib_data(abstract = "coronavirus")
+coronavirus_articles <- epibibr_data(abstract = "coronavirus")
 ```
 
-### Search by year
+#### Search by year
 
 ```{r,eval=FALSE}
-A2020_articles <- epibib_data(year = "2020")
+A2020_articles <- epibibr_data(year = "2020")
 ```
 
-### Search by source
+#### Search by source
 
 ```{r,eval=FALSE}
-bio_articles <- epibib_data(source = "bio")
+bio_articles <- epibibr_data(source = "bio")
 ```
 
+### Create visuals
 
+EpiBibR allows you to create three summary visuals on its data.
+
+#### Number of articles
+
+**Note that if the argument title is set to TRUE or is empty, title will appear. To hide it, title must be set to FALSE 
+
+```{r}
+epibibr_visual(chart = "line_1", title = TRUE)
+```
+
+#### Most Productive Authors
          
-
+```{r}
+epibibr_visual(chart = "bar_1")
+```
  
-
+#### Most Productive Countries
+ 
+```{r}
+epibibr_visual(chart = "bar_2")
+```
 
 

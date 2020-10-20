@@ -49,7 +49,7 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
                                                  grepl(source, SO, ignore.case = TRUE) & 
                                                  grepl(abstract, AB, ignore.case = TRUE), ])
   
-  EpiBib_grep[ EpiBib_grep == "MISSING999" ] <- NA 
+  
 }
 
 #' epibibr_visual

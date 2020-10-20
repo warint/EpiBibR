@@ -38,12 +38,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -54,9 +48,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/previousFunctions.html">EpibibR: Vignette</a>
-    </li>
-    <li>
       <a href="articles/reproducibleMaterial.html">EpiBibR's Reproducible Bibliometric Material</a>
     </li>
     <li>
@@ -94,7 +85,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 85,319 references (on October 13, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the ntributions to their research questions. Our package proposes 22 features for the 86,733 references (on October 20, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -196,10 +187,12 @@
 <h2 class="hasAnchor">
 <a href="#quick-start" class="anchor"></a>Quick start</h2>
 <p>First, install EpiBibR:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/EpiBibR"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"warint/EpiBibR"</span><span class="op">)</span></pre></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">EpiBibR</span>)</pre></div>
-<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, keywords in the title, keywords in the abstract, year and source name. We have also created a new function that synthesizes our previous ones. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Practical Guide</a>, read our tutorial on previous functions<a href=""></a> and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://warint.github.io/EpiBibR/">EpiBibR</a></span><span class="op">)</span></pre></div>
+<p>EpiBibR allows you to search bibligraphic references using several arguments : Author, author’s country of origin, keywords in the title, keywords in the abstract, year and source name. We have also created a new function that synthesizes our previous ones. You can follow the procedure through our <a href="https://warint.github.io/EpiBibR/articles/vignette.html">Practical Guide</a>and access to <a href="https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html">reproducible bibliometric material</a></p>
 </div>
 <div id="bibliometric-analysis" class="section level2">
 <h2 class="hasAnchor">
@@ -212,22 +205,22 @@
 <p>Open access to the article explaining EpibibR <br><span class="math display">[<em>h</em><em>e</em><em>r</em><em>e</em>](<em>h</em><em>t</em><em>t</em><em>p</em><em>s</em> : //<em>w</em><em>w</em><em>w</em>.<em>j</em><em>m</em><em>i</em><em>r</em>.<em>o</em><em>r</em><em>g</em>/2020/8/<em>e</em>19615/)</span><br></p>
 <p>Please cite as:</p>
 <p>Warin T, <a href="https://www.jmir.org/2020/8/e19615/">“Global Research on Coronaviruses: An R Package”</a>, J Med Internet Res 2020;22(8):e19615, DOI: 10.2196/19615, PMID: 32730218, PMCID: 7423387</p>
-<div class="sourceCode" id="cb3"><pre class="r">@Article{info:doi/10.2196/19615,
-author="Warin, Thierry",
-title="Global Research on Coronaviruses: An R Package",
-journal="J Med Internet Res",
-year="2020",
-month="Aug",
-day="11",
-volume="22",
-number="8",
-pages="e19615",
-issn="1438-8871",
-doi="10.2196/19615",
-url="http://www.jmir.org/2020/8/e19615/",
-url="https://doi.org/10.2196/19615",
-url="http://www.ncbi.nlm.nih.gov/pubmed/32730218"
-}</pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">@</span>Article{info<span class="op">:</span>doi<span class="op">/</span><span class="fl">10.2196</span><span class="op">/</span><span class="dv">19615</span>,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>author=<span class="st">"Warin, Thierry"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>title=<span class="st">"Global Research on Coronaviruses: An R Package"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4"></a>journal=<span class="st">"J Med Internet Res"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>year=<span class="st">"2020"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>month=<span class="st">"Aug"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>day=<span class="st">"11"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8"></a>volume=<span class="st">"22"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9"></a>number=<span class="st">"8"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10"></a>pages=<span class="st">"e19615"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11"></a>issn=<span class="st">"1438-8871"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12"></a>doi=<span class="st">"10.2196/19615"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13"></a>url=<span class="st">"http://www.jmir.org/2020/8/e19615/"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14"></a>url=<span class="st">"https://doi.org/10.2196/19615"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15"></a>url=<span class="st">"http://www.ncbi.nlm.nih.gov/pubmed/32730218"</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>}</span></code></pre></div>
 </div>
 <div id="acknowledgements" class="section level2">
 <h2 class="hasAnchor">
@@ -278,7 +271,7 @@ url="http://www.ncbi.nlm.nih.gov/pubmed/32730218"
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
