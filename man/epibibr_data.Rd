@@ -34,5 +34,7 @@ This function allows you to find and display medical bibliographic data accordin
 If no arguments are filled, all data will be displayed.
 }
 \examples{
+\dontrun{
 EpiBib_data <- epibibr_data()
+}
 }

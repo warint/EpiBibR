@@ -29,7 +29,9 @@ load(rData)
 #' @import curl
 #' 
 #' @examples
+#' \dontrun{
 #' EpiBib_data <- epibibr_data()
+#' }
 
 
 epibibr_data <- function(author = "", year = "", country = "", title = "", source = "", abstract = "") {
