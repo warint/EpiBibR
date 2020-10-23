@@ -19,5 +19,7 @@ This function allows you to create visuals from the preset options :
  line chart on number of articles, bar chart on most productive authors or bar chart on most productive countries.
 }
 \examples{
+\dontrun{
 epibibr_visual(chart = "line_1", title = TRUE)
+}
 }

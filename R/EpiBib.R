@@ -70,7 +70,9 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
 #' 
 #' 
 #' @examples
+#' \dontrun{
 #' epibibr_visual(chart = "line_1", title = TRUE)
+#' }
 
 epibibr_visual <- function(chart = "line_1", title = TRUE){
   PY <- n <- AU <- desc <- AU_CO <- NULL
