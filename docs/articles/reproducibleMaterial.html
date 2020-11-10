@@ -102,9 +102,9 @@
 <a href="#biblioshiny-procedure-and-examples" class="anchor"></a>Biblioshiny : Procedure and Examples</h3>
 <p>This procedure is based on the one made by the creators of the Bibliometrix package (Aria and Cuccurullo 2017).</p>
 <p>Step 1 - Load the Bibliometrix package and load the biblioshiny function</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.bibliometrix.org">bibliometrix</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioshiny.html">biblioshiny</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.bibliometrix.org">bibliometrix</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioshiny.html">biblioshiny</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Step 2 - Download an example at the following <a href="https://www.bibliometrix.org/datasets/joi.zip">link</a> . It includes all articles published by the Journal of Informetrics from 2007 to 2017.</p>
 <p>Step 2 - In the Load menu, select ‘Web of Knowledge’ as database and ‘Plaintext’ as file format.</p>
 <p>Step 3 - Choose and load the file joi.zip using the browse button.</p>
@@ -114,8 +114,8 @@
 <h3 class="hasAnchor">
 <a href="#an-algorithmic-systematic-literature-review-of-epibibr" class="anchor"></a>An Algorithmic Systematic Literature Review of EpiBibR</h3>
 <p>By using Bibliometrix tools to analyse our EpiBibR’s data, we were able to propose a simple count of the references on the coronaviruses literature and even upgrade the original visuals.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># Load the packages</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Load the packages</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://warint.github.io/EpiBibR/">EpiBibR</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.bibliometrix.org">bibliometrix</a></span><span class="op">)</span>
 
@@ -126,10 +126,10 @@
 
 <span class="co"># Summary bibliometric results</span>
 <span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioAnalysis.html">biblioAnalysis</a></span><span class="op">(</span><span class="va">M</span>, sep <span class="op">=</span> <span class="st">";"</span><span class="op">)</span>
-<span class="va">S</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">results</span>, k <span class="op">=</span> <span class="fl">10</span>, pause <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></pre></div>
+<span class="va">S</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">results</span>, k <span class="op">=</span> <span class="fl">10</span>, pause <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p>Summary includes info such as the number of documents, the most productive authors, the most productive countries and the count of articles per year. To assist in understanding this summary, we have created these three grapics.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co"># Most Productive Authors</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Most Productive Authors</span>
 
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.bibliometrix.org">bibliometrix</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadley/reshape">reshape2</a></span><span class="op">)</span>
@@ -189,14 +189,14 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1950</span>,<span class="fl">2020</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://rdrr.io/pkg/ggthemes/man/theme_hc.html">theme_hc</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-
+<span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
 <span class="fu"><a href="https://wilkelab.org/cowplot/reference/ggdraw.html">ggdraw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html">draw_plot</a></span><span class="op">(</span><span class="va">p3</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">1</span>, <span class="fl">.5</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html">draw_plot</a></span><span class="op">(</span><span class="va">p1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">.5</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html">draw_plot</a></span><span class="op">(</span><span class="va">p2</span>, <span class="fl">.5</span>, <span class="fl">0</span>, <span class="fl">.5</span>, <span class="fl">.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot_label.html">draw_plot_label</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0.5</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></pre></div>
+  <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot_label.html">draw_plot_label</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0.5</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="figure1.png" alt="(A) Count of Articles, (B) Most Productive Authors and (C) Most Productive Countries" width="70%"><p class="caption">
 </p>
@@ -206,14 +206,14 @@
 </div>
 
 <p>We can also use powerful techniques such as Social Network Theory to find potential clusters of topics, clusters of researchers and clusters of country collaborations. The U.S. and China produce the bulk of the research on coronaviruses.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="co"># Country Collaboration Network</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Country Collaboration Network</span>
 <span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/metaTagExtraction.html">metaTagExtraction</a></span><span class="op">(</span><span class="va">M</span>, Field <span class="op">=</span> <span class="st">"AU_CO"</span>, sep <span class="op">=</span> <span class="st">";"</span><span class="op">)</span>
 <span class="va">NetMatrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/biblioNetwork.html">biblioNetwork</a></span><span class="op">(</span><span class="va">M</span>, analysis <span class="op">=</span> <span class="st">"collaboration"</span>, network <span class="op">=</span> <span class="st">"countries"</span>, sep <span class="op">=</span> <span class="st">";"</span><span class="op">)</span>
 
 <span class="co"># Plot the network</span>
 
-<span class="va">net1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/networkPlot.html">networkPlot</a></span><span class="op">(</span><span class="va">NetMatrix</span>, n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">NetMatrix</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, Title <span class="op">=</span> <span class="st">""</span>, type <span class="op">=</span> <span class="st">"sphere"</span>, size<span class="op">=</span><span class="cn">TRUE</span>, remove.multiple<span class="op">=</span><span class="cn">FALSE</span>, labelsize<span class="op">=</span><span class="fl">3</span>, cluster<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></pre></div>
+<span class="va">net1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/bibliometrix/man/networkPlot.html">networkPlot</a></span><span class="op">(</span><span class="va">NetMatrix</span>, n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">NetMatrix</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, Title <span class="op">=</span> <span class="st">""</span>, type <span class="op">=</span> <span class="st">"sphere"</span>, size<span class="op">=</span><span class="cn">TRUE</span>, remove.multiple<span class="op">=</span><span class="cn">FALSE</span>, labelsize<span class="op">=</span><span class="fl">3</span>, cluster<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="figure5.png" alt="Country Collaboration Network" width="60%"><p class="caption">
 Country Collaboration Network

@@ -91,7 +91,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 89,977 references (on November 3, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The later is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 93,120 references (on November 3, 2020) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point later, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -193,11 +193,11 @@ Table 1. Features accessible through the package.
 <h2 class="hasAnchor">
 <a href="#quick-start" class="anchor"></a>Quick start</h2>
 <p>First, install EpiBibR:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"warint/EpiBibR"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"warint/EpiBibR"</span><span class="op">)</span></code></pre></div>
 <p>Next, call EpiBibR to make sure everything is installed correctly.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://warint.github.io/EpiBibR/">EpiBibR</a></span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://warint.github.io/EpiBibR/">EpiBibR</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="how-to" class="section level2">
 <h2 class="hasAnchor">
@@ -207,57 +207,57 @@ Table 1. Features accessible through the package.
 <h3 class="hasAnchor">
 <a href="#retrieve-bibliographic-data" class="anchor"></a>Retrieve bibliographic data</h3>
 <p>To get the entire bibliographic dataframe contaning more than 80 000 references, use the <code>epibib_data</code> function.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">complete_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">complete_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <div id="search-by-author" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-author" class="anchor"></a>Search by author</h4>
 <p>It can be truly helpful to search references by the name of the author. For example, we will search all the articles writtin by Philippe Colson.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">colson_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>author <span class="op">=</span> <span class="st">"Colson"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">colson_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>author <span class="op">=</span> <span class="st">"Colson"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-authors-country-of-origin-" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-authors-country-of-origin-" class="anchor"></a>Search by author’s country of origin.</h4>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="va">canada_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Canada"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">canada_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"Canada"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-author-and-year" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-author-and-year" class="anchor"></a>Search by author and year</h4>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="va">yang2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>author <span class="op">=</span><span class="st">"Yang"</span>, year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">yang2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>author <span class="op">=</span><span class="st">"Yang"</span>, year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-keywords-in-title" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-keywords-in-title" class="anchor"></a>Search by keywords in title</h4>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="va">covid_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"covid"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">covid_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"covid"</span><span class="op">)</span></code></pre></div>
 <p>As you may have noticed, you can keep more than one argument to refine your search.</p>
 </div>
 <div id="search-by-keywords-in-title-and-by-year" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-keywords-in-title-and-by-year" class="anchor"></a>Search by keywords in title and by year</h4>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="va">covid2020_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"covid"</span>, year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">covid2020_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"covid"</span>, year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-keywords-in-the-abstract" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-keywords-in-the-abstract" class="anchor"></a>Search by keywords in the abstract</h4>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="va">coronavirus_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>abstract <span class="op">=</span> <span class="st">"coronavirus"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">coronavirus_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>abstract <span class="op">=</span> <span class="st">"coronavirus"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-year" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-year" class="anchor"></a>Search by year</h4>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="va">A2020_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">A2020_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"2020"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="search-by-source" class="section level4">
 <h4 class="hasAnchor">
 <a href="#search-by-source" class="anchor"></a>Search by source</h4>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="va">bio_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"bio"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">bio_articles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/epibibr_data.html">epibibr_data</a></span><span class="op">(</span>source <span class="op">=</span> <span class="st">"bio"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="create-visuals" class="section level3">
@@ -268,22 +268,22 @@ Table 1. Features accessible through the package.
 <h4 class="hasAnchor">
 <a href="#number-of-articles" class="anchor"></a>Number of articles</h4>
 <p>**Note that if the argument title is set to TRUE or is empty, title will appear. To hide it, title must be set to FALSE</p>
-<div class="sourceCode" id="cb12"><pre class="downlit">
-<span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"line_1"</span>, title <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"line_1"</span>, title <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="vignette_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
 </div>
 <div id="most-productive-authors" class="section level4">
 <h4 class="hasAnchor">
 <a href="#most-productive-authors" class="anchor"></a>Most Productive Authors</h4>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"bar_1"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"bar_1"</span><span class="op">)</span></code></pre></div>
 <p><img src="vignette_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
 </div>
 <div id="most-productive-countries" class="section level4">
 <h4 class="hasAnchor">
 <a href="#most-productive-countries" class="anchor"></a>Most Productive Countries</h4>
-<div class="sourceCode" id="cb14"><pre class="downlit">
-<span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"bar_2"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/epibibr_visual.html">epibibr_visual</a></span><span class="op">(</span>chart <span class="op">=</span> <span class="st">"bar_2"</span><span class="op">)</span></code></pre></div>
 <p><img src="vignette_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 </div>
 </div>
