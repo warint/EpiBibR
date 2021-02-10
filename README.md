@@ -26,7 +26,7 @@ differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 112,208 references (on January 22, 2021)
+proposes 22 features for the 118,779 references (on February 10, 2021)
 and access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
