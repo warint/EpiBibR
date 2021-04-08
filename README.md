@@ -26,7 +26,7 @@ differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 130,098 references (on March 15, 2021) and
+proposes 22 features for the 137,015 references (on April 8, 2021) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -79,13 +79,11 @@ of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
 ## Features
 
 <center>
-
 Table 1. Features accessible through the package.
-
 </center>
 
 | Field Tags | Descriptions                        | Field Tags | Descriptions               |
-| ---------- | ----------------------------------- | ---------- | -------------------------- |
+|------------|-------------------------------------|------------|----------------------------|
 | AU         | Authors                             | ISSN       | Source Code                |
 | TI         | Document Title                      | VOL        | Volume                     |
 | AB         | Abstract                            | ISSUE      | Issue Number               |
@@ -134,13 +132,14 @@ massive amounts of data.
 ## Cite ‘epiBibR’
 
 Open access to the article explaining EpibibR
-\[[here](https://www.jmir.org/2020/8/e19615/)\]
+\[<a href="https://www.jmir.org/2020/8/e19615/" target="_blank">here</a>\]
 
 Please cite as:
 
-Warin T, [“Global Research on Coronaviruses: An R
-Package”](https://www.jmir.org/2020/8/e19615/), J Med Internet Res
-2020;22(8):e19615, DOI: 10.2196/19615, PMID: 32730218, PMCID: 7423387
+Warin T,
+<a href="https://www.jmir.org/2020/8/e19615/" target="_blank">“Global Research on Coronaviruses: An R Package”</a>,
+J Med Internet Res 2020;22(8):e19615, DOI: 10.2196/19615, PMID:
+32730218, PMCID: 7423387
 
 ``` r
 @Article{info:doi/10.2196/19615,

@@ -85,7 +85,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The latter is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 127,630 references (on March 8, 2021) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The latter is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 137,015 references (on April 8, 2021) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point latter, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -100,7 +100,7 @@
 <h2 class="hasAnchor">
 <a href="#features" class="anchor"></a>Features</h2>
 <center>
-<p>Table 1. Features accessible through the package.</p>
+Table 1. Features accessible through the package.
 </center>
 <table class="table">
 <thead><tr class="header">
@@ -202,25 +202,25 @@
 <div id="cite-epibibr" class="section level2">
 <h2 class="hasAnchor">
 <a href="#cite-epibibr" class="anchor"></a>Cite ‘epiBibR’</h2>
-<p>Open access to the article explaining EpibibR <br><span class="math display">[<em>h</em><em>e</em><em>r</em><em>e</em>](<em>h</em><em>t</em><em>t</em><em>p</em><em>s</em> : //<em>w</em><em>w</em><em>w</em>.<em>j</em><em>m</em><em>i</em><em>r</em>.<em>o</em><em>r</em><em>g</em>/2020/8/<em>e</em>19615/)</span><br></p>
+<p>Open access to the article explaining EpibibR <span class="math display">$$&lt;a href="https://www.jmir.org/2020/8/e19615/" target="_blank"&gt;here&lt;/a&gt;$$</span></p>
 <p>Please cite as:</p>
-<p>Warin T, <a href="https://www.jmir.org/2020/8/e19615/">“Global Research on Coronaviruses: An R Package”</a>, J Med Internet Res 2020;22(8):e19615, DOI: 10.2196/19615, PMID: 32730218, PMCID: 7423387</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">@</span>Article{info<span class="op">:</span>doi<span class="op">/</span><span class="fl">10.2196</span><span class="op">/</span><span class="dv">19615</span>,</span>
-<span id="cb3-2"><a href="#cb3-2"></a>author=<span class="st">"Warin, Thierry"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3"></a>title=<span class="st">"Global Research on Coronaviruses: An R Package"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4"></a>journal=<span class="st">"J Med Internet Res"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5"></a>year=<span class="st">"2020"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6"></a>month=<span class="st">"Aug"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7"></a>day=<span class="st">"11"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8"></a>volume=<span class="st">"22"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9"></a>number=<span class="st">"8"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10"></a>pages=<span class="st">"e19615"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11"></a>issn=<span class="st">"1438-8871"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12"></a>doi=<span class="st">"10.2196/19615"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13"></a>url=<span class="st">"http://www.jmir.org/2020/8/e19615/"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14"></a>url=<span class="st">"https://doi.org/10.2196/19615"</span>,</span>
-<span id="cb3-15"><a href="#cb3-15"></a>url=<span class="st">"http://www.ncbi.nlm.nih.gov/pubmed/32730218"</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a>}</span></code></pre></div>
+<p>Warin T, <a href="https://www.jmir.org/2020/8/e19615/" target="_blank">“Global Research on Coronaviruses: An R Package”</a>, J Med Internet Res 2020;22(8):e19615, DOI: 10.2196/19615, PMID: 32730218, PMCID: 7423387</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>Article{info<span class="sc">:</span>doi<span class="sc">/</span><span class="fl">10.2196</span><span class="sc">/</span><span class="dv">19615</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>author<span class="ot">=</span><span class="st">"Warin, Thierry"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>title<span class="ot">=</span><span class="st">"Global Research on Coronaviruses: An R Package"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>journal<span class="ot">=</span><span class="st">"J Med Internet Res"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>year<span class="ot">=</span><span class="st">"2020"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>month<span class="ot">=</span><span class="st">"Aug"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>day<span class="ot">=</span><span class="st">"11"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>volume<span class="ot">=</span><span class="st">"22"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>number<span class="ot">=</span><span class="st">"8"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>pages<span class="ot">=</span><span class="st">"e19615"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>issn<span class="ot">=</span><span class="st">"1438-8871"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>doi<span class="ot">=</span><span class="st">"10.2196/19615"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">"http://www.jmir.org/2020/8/e19615/"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">"https://doi.org/10.2196/19615"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">"http://www.ncbi.nlm.nih.gov/pubmed/32730218"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="acknowledgements" class="section level2">
 <h2 class="hasAnchor">
