@@ -26,7 +26,7 @@ differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 137,015 references (on April 8, 2021) and
+proposes 22 features for the 139,135 references (on April 14, 2021) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -82,19 +82,19 @@ of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
 Table 1. Features accessible through the package.
 </center>
 
-| Field Tags | Descriptions                        | Field Tags | Descriptions               |
-|------------|-------------------------------------|------------|----------------------------|
-| AU         | Authors                             | ISSN       | Source Code                |
-| TI         | Document Title                      | VOL        | Volume                     |
-| AB         | Abstract                            | ISSUE      | Issue Number               |
-| PY         | Year                                | LT         | Language                   |
-| DT         | Document Type                       | C1         | Author Address             |
-| MESH       | Medical Subject Headings Vocabulary | RP         | Reprint Address            |
-| TC         | Times Cited                         | ID         | PubMed ID                  |
-| SO         | Publication Name (or Source)        | DE         | Authors’ Keywords          |
-| J9         | Source Abbreviation                 | UT         | Unique Article Identifier  |
-| JI         | ISO Source Abbreviation             | AU\_CO     | Author’s Country of Origin |
-| DI         | Digital Object Identifier (DOI)     | DB         | Bibliographic Database     |
+| Field Tags | Descriptions                        | Field Tags | Descriptions                    |
+|------------|-------------------------------------|------------|---------------------------------|
+| AU         | Authors                             | ISSN       | Source Code                     |
+| TI         | Document Title                      | VOL        | Volume                          |
+| AB         | Abstract                            | ISSUE      | Issue Number                    |
+| PY         | Year                                | LT         | Language                        |
+| DT         | Document Type                       | C1         | Author Address                  |
+| MESH       | Medical Subject Headings Vocabulary | RP         | Reprint Address                 |
+| TC         | Times Cited                         | ID         | PubMed ID                       |
+| SO         | Publication Name (or Source)        | DE         | Authors’ Keywords               |
+| J9         | Source Abbreviation                 | UT         | Unique Article Identifier       |
+| JI         | ISO Source Abbreviation             | AU\_CO     | Author’s Country of Affiliation |
+| DI         | Digital Object Identifier (DOI)     | DB         | Bibliographic Database          |
 
 # Practical usage
 
