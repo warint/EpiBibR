@@ -26,7 +26,7 @@ differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 139,724 references (on April 14, 2021) and
+proposes 22 features for the 139,724 references (on April 16, 2021) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -81,9 +81,9 @@ of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
 <img src="man/figures/shiny.png" />
 
 For people less comfortable with R and to allow more people to have
-access to it, we have also developed a Shiny application.Through the
-same logic present in our package, researchers can retrieve data from
-our epidemiology-based bibliography.
+access to our package, we have also developed a Shiny
+application.Through the same logic present in our package, researchers
+can retrieve data from our epidemiology-based bibliography.
 
 EpiBibR EploR is available [\[here\]](https://warin.ca/shiny/epibibr/)
 
