@@ -85,7 +85,7 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The latter is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 137,015 references (on April 8, 2021) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
+<p>EpiBibR stands for “epidemiology-based bibliography for R.” The R package is under the MIT License and as such is a free resource based on the open science principles (reproducible research, open data, open code). The resource may be used by researchers, whose domain is scientometrics, but also by researchers from other disciplines. For instance, the scientific community in Artificial Intelligence and Data Science may use this package to accelerate new research insights about covid-19. The package follows the methodology put in place by the Allen Institute and its partners to create the CORD-19 dataset with some differences. The latter is accessible through downloads of sub-sets or through a REST API. The data provide important information such as authors, methods, data, and citations to make it easier for researchers to find relevant contributions to their research questions. Our package proposes 22 features for the 139,724 references (on April 14, 2021) and access to the data has been made as easy as possible in order to integrate efficiently in almost any researcher’s pipeline.</p>
 <p>Through this package, a researcher can connect the data to her analysis based on the R language. With this workflow in mind, a researcher can save time on collecting data, and can use a very accessible language to perform complex analytical tasks, be it R or Python for instance. Indeed, it is usual that researchers use multiple languages (functional or not) to produce certain outputs. This workflow opens these data to analyses from the largest spectrum of potential options, enhancing multidisciplinary approaches applied to these data (biostatistics, bibliometrics, text mining, etc.).</p>
 <p>The goal of this package in this emergency context is to limit the references to the medical domain, hence limiting ourselves to the Pubmed repository, but then to leverage the methodologies used across different disciplines. As we will address this point latter, a further extension could be to add references from other disciplines to not only benefit from the wealth of methodologies but also from their own theories and concepts. For instance, to assess the spread of the disease, the literature - and theories - from researchers in demography would certainly be relevant.</p>
 </div>
@@ -94,8 +94,15 @@
 <a href="#functionality" class="anchor"></a>Functionality</h1>
 <p>The references were collected via PubMed, a free resource that is developed and maintained by the National Center for Biotechnology Information (NCBI), at the U.S. National Library of Medicine (NLM), located at the National Institutes of Health (NIH). PubMed includes over 30 million citations from biomedical literature.</p>
 <p>More specifically, to collect our references, we adopted the procedure used by the Allen Institute for AI for their CORD-19 project. We apply a similar query on PubMed: “COVID-19” OR Coronavirus OR “Corona virus” OR “2019-nCoV” OR “SARS-CoV” OR “MERS-CoV” OR “Severe Acute Respiratory Syndrome” OR “Middle East Respiratory Syndrome” to build our own bibliographic data.</p>
-<p>To navigate through our dataset, EpiBibR relies on a set of search arguments: author, author’s country of origin, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
+<p>To navigate through our dataset, EpiBibR relies on a set of search arguments: author, author’s country of affiliation, keyword in the title, keyword in the abstract, year and the name of the journal. Each of them can truly help scientists and R users to filter references and find the relevant articles.</p>
 <p>In an effort to simplify the workflow between our package and the research methodologies, the format of our dataframe has been designed to integrate with different data pipelines, notably to facilitate the use of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).</p>
+<div id="shiny-app--epibibr-explor" class="section level2">
+<h2 class="hasAnchor">
+<a href="#shiny-app--epibibr-explor" class="anchor"></a>Shiny App : EpiBibR ExploR</h2>
+<p><img src="reference/figures/shiny.png"></p>
+<p>For people less comfortable with R and to allow more people to have access to it, we have also developed a Shiny application.Through the same logic present in our package, researchers can retrieve data from our epidemiology-based bibliography.</p>
+<p>EpiBibR EploR is available <a href="https://warin.ca/shiny/epibibr/"><span class="math display"><em>h</em><em>e</em><em>r</em><em>e</em></span></a></p>
+</div>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
 <a href="#features" class="anchor"></a>Features</h2>
@@ -168,7 +175,7 @@ Table 1. Features accessible through the package.
 <td>JI</td>
 <td>ISO Source Abbreviation</td>
 <td>AU_CO</td>
-<td>Author’s Country of Origin</td>
+<td>Author’s Country of Affiliation</td>
 </tr>
 <tr class="odd">
 <td>DI</td>

@@ -41,7 +41,7 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
   #reading the data
   rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
   load(rData)
-  EpiBib_data
+
   
   EpiBib_data[, 1:ncol(EpiBib_data)][is.na(EpiBib_data[, 1:ncol(EpiBib_data)])] <- "MISSING999"
   
@@ -51,6 +51,9 @@ epibibr_data <- function(author = "", year = "", country = "", title = "", sourc
                                                  grepl(source, SO, ignore.case = TRUE) & 
                                                  grepl(abstract, AB, ignore.case = TRUE), ])
   
+  EpiBib_grep[ EpiBib_grep == "MISSING999" ] <- NA 
+  
+  return(EpiBib_grep)
   
 }
 

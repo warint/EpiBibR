@@ -26,7 +26,7 @@ differences. The latter is accessible through downloads of sub-sets or
 through a REST API. The data provide important information such as
 authors, methods, data, and citations to make it easier for researchers
 to find relevant contributions to their research questions. Our package
-proposes 22 features for the 139,135 references (on April 14, 2021) and
+proposes 22 features for the 139,724 references (on April 14, 2021) and
 access to the data has been made as easy as possible in order to
 integrate efficiently in almost any researcher’s pipeline.
 
@@ -66,15 +66,26 @@ Syndrome” OR “Middle East Respiratory Syndrome” to build our own
 bibliographic data.
 
 To navigate through our dataset, EpiBibR relies on a set of search
-arguments: author, author’s country of origin, keyword in the title,
-keyword in the abstract, year and the name of the journal. Each of them
-can truly help scientists and R users to filter references and find the
-relevant articles.
+arguments: author, author’s country of affiliation, keyword in the
+title, keyword in the abstract, year and the name of the journal. Each
+of them can truly help scientists and R users to filter references and
+find the relevant articles.
 
 In an effort to simplify the workflow between our package and the
 research methodologies, the format of our dataframe has been designed to
 integrate with different data pipelines, notably to facilitate the use
 of the R package Bibliometrix with our data (Aria and Cuccurullo 2017).
+
+## Shiny App : EpiBibR ExploR
+
+<img src="man/figures/shiny.png" />
+
+For people less comfortable with R and to allow more people to have
+access to it, we have also developed a Shiny application.Through the
+same logic present in our package, researchers can retrieve data from
+our epidemiology-based bibliography.
+
+EpiBibR EploR is available [\[here\]](https://warin.ca/shiny/epibibr/)
 
 ## Features
 
