@@ -6,7 +6,7 @@ Authors@R:
     person("Thierry", "Warin", email = "thierry.warin@hec.ca", role =c("aut", "cre"), comment = c(ORCID = "0000-0002-5921-3428") )
 Description: Retrieve bibliographic medical data, primarily on COVID-19, and search references according to certain criteria.. Please cite: Warin T. (2020) "Global Research on Coronaviruses: An R Package", <doi:10.2196/19615>.
 License: MIT + file LICENSE
-Imports: curl, ggplot2, ggsci, dplyr, stats
+Imports: curl, ggplot2, ggsci, dplyr, stats, httr
 URL: https://warint.github.io/EpiBibR/
 Encoding: UTF-8
 RoxygenNote: 7.1.1

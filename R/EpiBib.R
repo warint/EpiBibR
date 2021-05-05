@@ -1,10 +1,17 @@
 url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
 path <- file.path(tempdir(), "temp.Rdata")
+if (httr::http_error(url)) { # network is down = message (not an error anymore)
+  message("No Internet connection or the server is in maintenance mode.")
+  return(NULL)
+} else { # network is up = proceed to download via curl
+  message("EpiBibR: downloading remote dataset.")
+  with(options(timeout = max(300, getOption("timeout"))),curl::curl_download(url, path))
+} # /if - network up or down
 curl::curl_download(url, path)
 #reading the data
 rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
 load(rData)  
-
+EpiBib_data <-EpiBib_data
 
 
 
@@ -35,12 +42,7 @@ load(rData)
 
 
 epibibr_data <- function(author = "", year = "", country = "", title = "", source = "", abstract = "") {
-  url <- paste0("https://warin.ca/datalake/epiBib/EpiBib.Rdata")
-  path <- file.path(tempdir(), "temp.Rdata")
-  curl::curl_download(url, path)
-  #reading the data
-  rData <- file.path(paste0(tempdir(), "/temp.Rdata"))
-  load(rData)
+ 
 
   
   EpiBib_data[, 1:ncol(EpiBib_data)][is.na(EpiBib_data[, 1:ncol(EpiBib_data)])] <- "MISSING999"
