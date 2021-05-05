@@ -9,8 +9,9 @@
 0 errors | 0 warnings | 1 note
 
 installed size is 53.3Mb
+    installed size is 94.6Mb
     sub-directories of 1Mb or more:
-      R    50.6Mb
+      R    92.6Mb
       doc   1.8Mb
 
 
