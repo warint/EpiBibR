@@ -52,7 +52,7 @@ library(EpiBibR)
 library(bibliometrix)
 
 # Retrieve EpiBib_data for 2020
-M <- epibib_data(year = "2020")
+M <- epibibr_data(year = "2020")
 
 
 
