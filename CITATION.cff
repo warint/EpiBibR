@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite it as below."
+authors:
+- family-names: "Warin"
+  given-names: "Thierry"
+  orcid: "https://orcid.org/0000-0002-5921-3428"
+title: "Global Research on Coronaviruses: An R Package"
+version: 0.1.0
+doi: 10.2196/19615
+date-released: 2020-09-11
+url: "https://github.com/warint/EpiBibR"
