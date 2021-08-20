@@ -5,7 +5,8 @@ authors:
   given-names: "Thierry"
   orcid: "https://orcid.org/0000-0002-5921-3428"
 title: "Global Research on Coronaviruses: An R Package"
+journal: "J Med Internet Res"
 version: 0.1.0
 doi: 10.2196/19615
-date-released: 2020-09-11
-url: "https://github.com/warint/EpiBibR"
+date-released: 2020-08-11
+url: "http://www.jmir.org/2020/8/e19615/"
