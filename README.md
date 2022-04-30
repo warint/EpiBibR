@@ -13,7 +13,7 @@ status](https://ci.appveyor.com/api/projects/status/github/warint/EpiBibR?branch
 
 # Overview
 
-EpiBibR stands for “epidemiology-based bibliography for R.” The R
+EpiBibR is **updated daily**. It stands for “epidemiology-based bibliography for R.” The R
 package is under the MIT License and as such is a free resource based on
 the open science principles (reproducible research, open data, open
 code). The resource may be used by researchers, whose domain is
