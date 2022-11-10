@@ -81,7 +81,7 @@ EpiBibR allows you to search bibligraphic references using several arguments : A
 
 ### Retrieve bibliographic data
 
-To get the entire bibliographic dataframe contaning more than 80 000 references, use the `epibib_data` function.
+To get the entire bibliographic dataframe contaning more than 80 000 references, use the `epibibr_data` function.
 
 ```{r,eval=FALSE}
 complete_data <- epibibr_data()
