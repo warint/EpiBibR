@@ -128,7 +128,7 @@ arguments : Author, author’s country of origin, keywords in the title,
 keywords in the abstract, year and source name. We have also created a
 new function that synthesizes our previous ones. You can follow the
 procedure through our [Practical
-Guide](https://warint.github.io/EpiBibR/articles/vignette.html)and
+Guide](https://warint.github.io/EpiBibR/articles/vignette.html) and
 access to [reproducible bibliometric
 material](https://warint.github.io/EpiBibR/articles/reproducibleMaterial.html)
 
